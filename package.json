@@ -1,0 +1,21 @@
+{
+  "name": "masses-and-springs-basics",
+  "version": "1.0.0-dev.0",
+  "license": "GPL-3.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phetsims/masses-and-springs-basics.git"
+  },
+  "devDependencies": {
+    "grunt": "~1.0.0"
+  },
+  "phet": {
+    "requirejsNamespace": "MASSES_AND_SPRINGS_BASICS",
+    "runnable": true,
+    "supportedBrands": [
+      "phet",
+      "adapted-from-phet"
+    ],
+    "simulation": true
+  }
+}
