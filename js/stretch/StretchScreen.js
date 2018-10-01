@@ -11,20 +11,16 @@ define( function( require ) {
   // modules
   var Color = require( 'SCENERY/util/Color' );
   var ColorIO = require( 'SCENERY/util/ColorIO' );
-  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var IntroModel = require( 'MASSES_AND_SPRINGS/intro/model/IntroModel' );
-  var IntroScreenView = require( 'MASSES_AND_SPRINGS/intro/view/IntroScreenView' );
+  var MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var Property = require( 'AXON/Property' );
   var PropertyIO = require( 'AXON/PropertyIO' );
   var Screen = require( 'JOIST/Screen' );
+  var StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
 
   // strings
   var screenStretchString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.stretch' );
-
-  // image
-  var introHomeScreenImage = require( 'image!MASSES_AND_SPRINGS/intro_screen_icon.png' );
 
   /**
    * @param {Tandem} tandem
@@ -35,19 +31,24 @@ define( function( require ) {
   function StretchScreen( tandem, options ) {
 
     options = _.extend( {
-      basicsVersion: false,
+      basicsVersion: true,
       name: screenStretchString,
       backgroundColorProperty: new Property( new Color( 'white' ), {
         tandem: tandem.createTandem( 'backgroundColorProperty' ),
         phetioType: PropertyIO( ColorIO )
       } ),
-      homeScreenIcon: new Image( introHomeScreenImage ),
       tandem: tandem
     }, options );
 
     Screen.call( this,
-      function() { return new IntroModel( tandem.createTandem( 'model' ), options ); },
-      function( model ) { return new IntroScreenView( model, tandem.createTandem( 'view' ), options ); },
+      function() {
+      var modelTandem = tandem.createTandem( 'model' );
+        var model = new MassesAndSpringsModel( modelTandem, options );
+        model.addDefaultSprings( modelTandem );
+        model.addDefaultMasses( modelTandem );
+        return model;
+        },
+      function( model ) { return new StretchScreenView (model, tandem ); },
       options
     );
   }
