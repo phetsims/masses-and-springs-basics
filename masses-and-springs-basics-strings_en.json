@@ -1,5 +1,8 @@
 {
   "masses-and-springs-basics.title": {
     "value": "Masses and Springs: Basics"
+  },
+  "screen.stretch":{
+    "value": "Stretch"
   }
 }

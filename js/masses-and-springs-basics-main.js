@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var EnergyScreen = require( 'MASSES_AND_SPRINGS/energy/EnergyScreen' );
-  var IntroScreen = require( 'MASSES_AND_SPRINGS/intro/IntroScreen' );
+  var StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
   var LabScreen = require( 'MASSES_AND_SPRINGS/lab/LabScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
@@ -25,17 +25,16 @@ define( function( require ) {
 
   var simOptions = {
     credits: {
-      leadDesign: 'Amy Rouinfar, Mike Dubson',
-      softwareDevelopment: 'Denzell Barnett, Matt Pennington',
-      team: 'Wendy Adams, Ariel Paul, Kathy Perkins',
-      qualityAssurance:
-        'Steele Dalton, Bryce Griebenow, Ethan Johnson, Megan Lai, Liam Mulhall, Arnab Purkayastha, Benjamin Roberts, Jacob Romero, Clara Wilson, Kathryn Woessner'
+      leadDesign: '',
+      softwareDevelopment: '',
+      team: '',
+      qualityAssurance: ''
     }
   };
 
   SimLauncher.launch( function() {
     var sim = new Sim( massesAndSpringsBasicsTitleString, [
-      new IntroScreen( tandem.createTandem( 'introScreen' ), { basicsVersion: true } ),
+      new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
       new VectorsScreen( tandem.createTandem( 'vectorsScreen' ), { basicsVersion: true } ),
       new EnergyScreen( tandem.createTandem( 'energyScreen' ), { basicsVersion: true } ),
       new LabScreen( tandem.createTandem( 'labScreen' ), { basicsVersion: true } )
