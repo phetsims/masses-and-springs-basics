@@ -12,6 +12,11 @@
   "phet": {
     "requirejsNamespace": "MASSES_AND_SPRINGS_BASICS",
     "runnable": true,
+    "phetLibs": [
+      "griddle",
+      "masses-and-springs",
+      "twixt"
+    ],
     "supportedBrands": [
       "phet",
       "adapted-from-phet"

@@ -29,8 +29,10 @@ require.config( {
     AXON: '../../axon/js',
     BRAND: '../../brand/' + phet.chipper.brand + '/js',
     DOT: '../../dot/js',
+    GRIDDLE: '../../griddle/js',
     JOIST: '../../joist/js',
     KITE: '../../kite/js',
+    MASSES_AND_SPRINGS: '../../masses-and-springs/js',
     MASSES_AND_SPRINGS_BASICS: '.',
     PHETCOMMON: '../../phetcommon/js',
     PHET_CORE: '../../phet-core/js',
@@ -40,7 +42,8 @@ require.config( {
     SCENERY_PHET: '../../scenery-phet/js',
     SUN: '../../sun/js',
     TAMBO: '../../tambo/js',
-    TANDEM: '../../tandem/js'
+    TANDEM: '../../tandem/js',
+    TWIXT: '../../twixt/js'
   },
 
   // optional cache buster to make browser refresh load all included scripts, can be disabled with ?cacheBuster=false
