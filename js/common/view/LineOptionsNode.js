@@ -22,6 +22,7 @@ define( function( require ) {
   var VerticalCheckboxGroup = require( 'SUN/VerticalCheckboxGroup' );
 
   // strings
+  // TODO: Move this strings into M&S:Basics .json
   var restingPositionString = require( 'string!MASSES_AND_SPRINGS/restingPosition' );
   var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
   var periodTraceString = require( 'string!MASSES_AND_SPRINGS/periodTrace' );

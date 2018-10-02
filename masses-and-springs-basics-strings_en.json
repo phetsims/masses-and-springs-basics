@@ -4,5 +4,8 @@
   },
   "screen.stretch":{
     "value": "Stretch"
+  },
+  "screen.bounce":{
+    "value": "Bounce"
   }
 }

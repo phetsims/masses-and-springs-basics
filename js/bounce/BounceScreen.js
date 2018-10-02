@@ -1,7 +1,7 @@
 // Copyright 2018, University of Colorado Boulder
 
 /**
- * The Stretch screen for Masses and Springs: Basics.
+ * The Bounce screen for Masses and Springs: Basics.
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
@@ -20,7 +20,7 @@ define( function( require ) {
   var StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
 
   // strings
-  var screenStretchString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.stretch' );
+  var screenBounceString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.bounce' );
 
   /**
    * @param {Tandem} tandem
@@ -28,11 +28,11 @@ define( function( require ) {
    *
    * @constructor
    */
-  function StretchScreen( tandem, options ) {
+  function BounceScreen( tandem, options ) {
 
     options = _.extend( {
       basicsVersion: true,
-      name: screenStretchString,
+      name: screenBounceString,
       backgroundColorProperty: new Property( new Color( 'white' ), {
         tandem: tandem.createTandem( 'backgroundColorProperty' ),
         phetioType: PropertyIO( ColorIO )
@@ -42,17 +42,17 @@ define( function( require ) {
 
     Screen.call( this,
       function() {
-      var modelTandem = tandem.createTandem( 'model' );
+        var modelTandem = tandem.createTandem( 'model' );
         var model = new MassesAndSpringsModel( modelTandem, options );
         model.addDefaultSprings( modelTandem );
         model.addDefaultMasses( modelTandem );
         return model;
-        },
+      },
       function( model ) { return new StretchScreenView (model, tandem ); },
       options
     );
   }
 
-  massesAndSpringsBasics.register( 'StretchScreen', StretchScreen );
-  return inherit( Screen, StretchScreen );
+  massesAndSpringsBasics.register( 'BounceScreen', BounceScreen );
+  return inherit( Screen, BounceScreen );
 } );
