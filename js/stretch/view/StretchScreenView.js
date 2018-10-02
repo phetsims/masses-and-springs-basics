@@ -11,15 +11,17 @@ define( function( require ) {
   // modules
   var Color = require( 'SCENERY/util/Color' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
+  var DraggableRulerNode = require( 'MASSES_AND_SPRINGS/common/view/DraggableRulerNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
+  var Property = require( 'AXON/Property' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
-  var LineOptionsNode = require('MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode');
+  var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var EQUILIBRIUM_LINE_FILL = new Color('rgb( 0, 180, 0 )');
+  var EQUILIBRIUM_LINE_FILL = new Color( 'rgb( 0, 180, 0 )' );
 
   /**
    * @param {VectorsModel} model
@@ -79,11 +81,23 @@ define( function( require ) {
     this.addChild( optionsPanel );
     optionsPanel.moveToBack();
 
+    // @public {DraggableRulerNode}
+    this.rulerNode = new DraggableRulerNode(
+      this.modelViewTransform,
+      this.visibleBoundsProperty.get(),
+      Vector2.ZERO,
+      new Property( true ),
+      function() { },
+      tandem.createTandem( 'rulerNode' )
+    );
+    this.addChild( this.rulerNode );
+
     // Move this plane to the back of the scene graph
     this.backgroundDragNode.moveToBack();
 
     this.visibleBoundsProperty.link( function() {
       optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
+      self.rulerNode.positionProperty.set(optionsPanel.rightBottom.plusXY( 0, self.spacing ));
     } );
   }
 
