@@ -1,4 +1,4 @@
-// Copyright 2017-2018, University of Colorado Boulder
+// Copyright 2018, University of Colorado Boulder
 
 /**
  * Panel that manages the visibility of reference lines.
@@ -24,6 +24,7 @@ define( function( require ) {
   // strings
   var restingPositionString = require( 'string!MASSES_AND_SPRINGS/restingPosition' );
   var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
+  var periodTraceString = require( 'string!MASSES_AND_SPRINGS/periodTrace' );
   var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS/unstretchedLength' );
 
   // constants
@@ -117,6 +118,13 @@ define( function( require ) {
       }, {
         node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
         property: model.movableLineVisibleProperty
+      },{
+        node: new Text( periodTraceString, {
+          font: MassesAndSpringsConstants.TITLE_FONT,
+          maxWidth: CONTENT_MAX_WIDTH,
+          tandem: tandem.createTandem( 'periodTraceString' )
+        } ),
+        property: model.firstSpring.periodTraceVisibilityProperty
       } ], {
         checkboxOptions: {
           boxWidth: 16,
