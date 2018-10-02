@@ -36,7 +36,6 @@ define( function( require ) {
     var sim = new Sim( massesAndSpringsBasicsTitleString, [
       new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
       new VectorsScreen( tandem.createTandem( 'vectorsScreen' ), { basicsVersion: true } ),
-      new EnergyScreen( tandem.createTandem( 'energyScreen' ), { basicsVersion: true } ),
       new LabScreen( tandem.createTandem( 'labScreen' ), { basicsVersion: true } )
     ], simOptions );
     sim.start();

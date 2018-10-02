@@ -9,15 +9,17 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Color = require( 'SCENERY/util/Color' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
+  var LineOptionsPanel = require('MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode');
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
-  var EQUILIBRIUM_LINE_FILL = 'black';
+  var EQUILIBRIUM_LINE_FILL = new Color('rgb( 0, 180, 0 )');
 
   /**
    * @param {VectorsModel} model
@@ -69,10 +71,10 @@ define( function( require ) {
     secondSpringEquilibriumLineNode.moveToBack();
 
     // Contains visibility options for the reference lines and displacement arrow
-    var indicatorVisibilityControlNode = this.createIndicatorVisibilityPanel( model, false, tandem, { enableMovableLine: false } );
+    var lineOptionsPanel = new LineOptionsPanel( model, tandem, { enableMovableLine: false } );
 
     // Panel that will display all the toggleable options.
-    var optionsPanel = this.createOptionsPanel( indicatorVisibilityControlNode, this.rightPanelAlignGroup, tandem );
+    var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
 
     this.addChild( optionsPanel );
     optionsPanel.moveToBack();
