@@ -12,12 +12,12 @@ define( function( require ) {
   var Color = require( 'SCENERY/util/Color' );
   var ColorIO = require( 'SCENERY/util/ColorIO' );
   var inherit = require( 'PHET_CORE/inherit' );
-  var MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
+  var LabModel = require( 'MASSES_AND_SPRINGS/lab/model/LabModel' );
   var Property = require( 'AXON/Property' );
   var PropertyIO = require( 'AXON/PropertyIO' );
   var Screen = require( 'JOIST/Screen' );
-  var BounceScreenView = require( 'MASSES_AND_SPRINGS_BASICS/bounce/view/BounceScreenView' );
+  var LabScreenView = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/LabScreenView' );
 
   // strings
   var screenLabString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.lab' );
@@ -42,13 +42,11 @@ define( function( require ) {
 
     Screen.call( this,
       function() {
-        var modelTandem = tandem.createTandem( 'model' );
-        var model = new MassesAndSpringsModel( modelTandem, options );
-        model.addDefaultSprings( modelTandem );
-        model.addDefaultMasses( modelTandem );
-        return model;
+        return new LabModel( tandem.createTandem( 'model' ), options );
       },
-      function( model ) { return new BounceScreenView(model, tandem ); },
+      function( model ) {
+        return new LabScreenView( model, tandem );
+      },
       options
     );
   }
