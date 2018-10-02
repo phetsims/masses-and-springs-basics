@@ -10,7 +10,7 @@ define( function( require ) {
 
   // modules
   var StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
-  var LabScreen = require( 'MASSES_AND_SPRINGS/lab/LabScreen' );
+  var LabScreen = require( 'MASSES_AND_SPRINGS_BASICS/lab/LabScreen' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
   var Tandem = require( 'TANDEM/Tandem' );
@@ -35,7 +35,7 @@ define( function( require ) {
     var sim = new Sim( massesAndSpringsBasicsTitleString, [
       new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
       new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
-      new LabScreen( tandem.createTandem( 'labScreen' ), { basicsVersion: true } )
+      new LabScreen( tandem.createTandem( 'labScreen' ) )
     ], simOptions );
     sim.start();
   } );
