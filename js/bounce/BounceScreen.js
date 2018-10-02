@@ -17,7 +17,7 @@ define( function( require ) {
   var Property = require( 'AXON/Property' );
   var PropertyIO = require( 'AXON/PropertyIO' );
   var Screen = require( 'JOIST/Screen' );
-  var StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
+  var BounceScreenView = require( 'MASSES_AND_SPRINGS_BASICS/bounce/view/BounceScreenView' );
 
   // strings
   var screenBounceString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.bounce' );
@@ -48,7 +48,7 @@ define( function( require ) {
         model.addDefaultMasses( modelTandem );
         return model;
       },
-      function( model ) { return new StretchScreenView (model, tandem ); },
+      function( model ) { return new BounceScreenView(model, tandem ); },
       options
     );
   }

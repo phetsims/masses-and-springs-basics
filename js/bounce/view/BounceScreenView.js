@@ -1,7 +1,7 @@
 // Copyright 2018, University of Colorado Boulder
 
 /**
- * View for Stretch screen.
+ * View for Bounce screen.
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
@@ -11,13 +11,12 @@ define( function( require ) {
   // modules
   var Color = require( 'SCENERY/util/Color' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
-  var DraggableRulerNode = require( 'MASSES_AND_SPRINGS/common/view/DraggableRulerNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
-  var Property = require( 'AXON/Property' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
+  var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
@@ -28,7 +27,7 @@ define( function( require ) {
    * @param {Tandem} tandem
    * @constructor
    */
-  function StretchScreenView( model, tandem ) {
+  function BounceScreenView( model, tandem ) {
 
     // Calls common two spring view
     TwoSpringScreenView.call( this, model, tandem );
@@ -72,41 +71,27 @@ define( function( require ) {
     firstSpringEquilibriumLineNode.moveToBack();
     secondSpringEquilibriumLineNode.moveToBack();
 
-    // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
-
     // Panel that will display all the toggleable options.
-    var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
-
-    this.addChild( optionsPanel );
-    optionsPanel.moveToBack();
-
-    // @public {DraggableRulerNode}
-    this.rulerNode = new DraggableRulerNode(
-      this.modelViewTransform,
-      this.visibleBoundsProperty.get(),
-      Vector2.ZERO,
-      new Property( true ),
-      function() { },
-      tandem.createTandem( 'rulerNode' )
+    var optionsPanel = this.createOptionsPanel(
+      new LineOptionsNode( model, tandem, { enableMovableLine: true } ),
+      this.rightPanelAlignGroup,
+      tandem
     );
-    this.addChild( this.rulerNode );
+
+    // Contains all of the options for the reference lines, gravity, damping, and toolbox
+    var rightPanelsVBox = new VBox( { children: [ optionsPanel, self.toolboxPanel ], spacing: this.spacing * 0.9 } );
+    this.addChild( rightPanelsVBox );
+    rightPanelsVBox.moveToBack();
+
+    this.visibleBoundsProperty.link( function() {
+      rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing);
+    } );
 
     // Move this plane to the back of the scene graph
     this.backgroundDragNode.moveToBack();
-
-    this.visibleBoundsProperty.link( function() {
-      optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
-      self.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, self.spacing ) );
-    } );
-
-    // Reset call here sets the ruler to its default position rather than resetting the positionProperty
-    this.resetAllButton.addListener( function() {
-      self.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, self.spacing ) );
-    } );
   }
 
-  massesAndSpringsBasics.register( 'StretchScreenView', StretchScreenView );
+  massesAndSpringsBasics.register( 'BounceScreenView', BounceScreenView );
 
-  return inherit( TwoSpringScreenView, StretchScreenView );
+  return inherit( TwoSpringScreenView, BounceScreenView );
 } );
