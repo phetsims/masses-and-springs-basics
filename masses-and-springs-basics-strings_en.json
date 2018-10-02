@@ -13,8 +13,5 @@
   },
   "unstretchedLength": {
     "value": "Unstretched Length"
-  },
-  "springStiffness": {
-    "value": " Spring Stiffness {{spring}}"
   }
 }
