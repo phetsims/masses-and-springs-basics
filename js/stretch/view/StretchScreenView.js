@@ -15,7 +15,7 @@ define( function( require ) {
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
-  var LineOptionsPanel = require('MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode');
+  var LineOptionsNode = require('MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode');
   var Vector2 = require( 'DOT/Vector2' );
 
   // constants
@@ -71,7 +71,7 @@ define( function( require ) {
     secondSpringEquilibriumLineNode.moveToBack();
 
     // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsPanel( model, tandem, { enableMovableLine: false } );
+    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );

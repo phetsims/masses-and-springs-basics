@@ -9,7 +9,6 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var EnergyScreen = require( 'MASSES_AND_SPRINGS/energy/EnergyScreen' );
   var StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
   var LabScreen = require( 'MASSES_AND_SPRINGS/lab/LabScreen' );
   var Sim = require( 'JOIST/Sim' );
