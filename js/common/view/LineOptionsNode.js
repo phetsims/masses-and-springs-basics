@@ -22,11 +22,10 @@ define( function( require ) {
   var VerticalCheckboxGroup = require( 'SUN/VerticalCheckboxGroup' );
 
   // strings
-  // TODO: Move this strings into M&S:Basics .json
-  var restingPositionString = require( 'string!MASSES_AND_SPRINGS/restingPosition' );
+  var restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
   var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
   var periodTraceString = require( 'string!MASSES_AND_SPRINGS/periodTrace' );
-  var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS/unstretchedLength' );
+  var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
 
   // constants
   var CONTENT_MAX_WIDTH = 115;
