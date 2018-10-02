@@ -70,7 +70,7 @@ define( function( require ) {
     } );
 
     this.shelf.rectWidth = 160;
-    this.shelf.left = this.energyGraphNode.right + this.spacing;
+    this.shelf.left = this.springSystemControlsNode.left - 60;
 
     // Move tools layer so ruler is always in front.
     this.toolsLayer.moveToFront();
@@ -82,7 +82,6 @@ define( function( require ) {
   massesAndSpringsBasics.register( 'LabScreenView', LabScreenView );
   return inherit( OneSpringScreenView, LabScreenView, {
     step: function( dt ) {
-      this.energyGraphNode.update();
       this.periodTraceNode.step( dt, this.model.playingProperty );
     }
   } );
