@@ -9,13 +9,10 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var Color = require( 'SCENERY/util/Color' );
-  var ColorIO = require( 'SCENERY/util/ColorIO' );
   var inherit = require( 'PHET_CORE/inherit' );
   var MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  var Property = require( 'AXON/Property' );
-  var PropertyIO = require( 'AXON/PropertyIO' );
+  var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var Screen = require( 'JOIST/Screen' );
   var StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
 
@@ -33,10 +30,7 @@ define( function( require ) {
     options = _.extend( {
       basicsVersion: true,
       name: screenStretchString,
-      backgroundColorProperty: new Property( new Color( 'white' ), {
-        tandem: tandem.createTandem( 'backgroundColorProperty' ),
-        phetioType: PropertyIO( ColorIO )
-      } ),
+      backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
       tandem: tandem
     }, options );
 
