@@ -69,8 +69,8 @@ define( function( require ) {
       rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
     } );
 
-    this.shelf.rectWidth = 160;
-    this.shelf.left = this.springSystemControlsNode.left - 60;
+    this.shelf.rectWidth = 200;
+    this.shelf.left = this.springSystemControlsNode.left - 70;
 
     // Move tools layer so ruler is always in front.
     this.toolsLayer.moveToFront();
