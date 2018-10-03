@@ -14,6 +14,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
+  var OscillatingSpringNode = require( 'MASSES_AND_SPRINGS/common/view/OscillatingSpringNode' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -77,6 +78,24 @@ define( function( require ) {
       this.rightPanelAlignGroup,
       tandem
     );
+
+    // TODO: We are reinitializing this.springNodes. Is this the best way to handle this? Ask JO
+    // @public {Array.<OscillatingSpringNode>} Initialize a new array of springNodes with a different color selection.
+    this.springNodes = model.springs.map( function( spring ) {
+      var springNode = new OscillatingSpringNode(
+        spring,
+        self.modelViewTransform,
+        tandem.createTandem( 'oscillatingSpringNode' ), {
+          leftEndLength: -10,
+          frontColor: new Color('rgb( 227, 153, 221 )'),
+          middleColor: new Color('rgb( 185, 0, 169 )'),
+          backColor: new Color('rgb( 93, 0, 85 )')
+        }
+      );
+      self.addChild( springNode );
+      return springNode;
+    } );
+    this.springSystemControlsNode.moveToFront();
 
     // Contains all of the options for the reference lines, gravity, damping, and toolbox
     var rightPanelsVBox = new VBox( { children: [ optionsPanel, self.toolboxPanel ], spacing: this.spacing * 0.9 } );
