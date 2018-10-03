@@ -13,15 +13,13 @@ define( function( require ) {
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
+  var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   var OscillatingSpringNode = require( 'MASSES_AND_SPRINGS/common/view/OscillatingSpringNode' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
-
-  // constants
-  var EQUILIBRIUM_LINE_FILL = new Color( 'rgb( 0, 180, 0 )' );
 
   /**
    * @param {VectorsModel} model
@@ -50,7 +48,7 @@ define( function( require ) {
       model.firstSpring,
       model.firstSpring.massEquilibriumYPositionProperty,
       firstMassEquilibriumVisibilityProperty, {
-        stroke: EQUILIBRIUM_LINE_FILL
+        stroke: MassesAndSpringsColorProfile.restingPositionProperty
       }
     );
 
@@ -60,7 +58,7 @@ define( function( require ) {
       model.secondSpring,
       model.secondSpring.massEquilibriumYPositionProperty,
       secondMassEquilibriumVisibilityProperty, {
-        stroke: EQUILIBRIUM_LINE_FILL
+        stroke: MassesAndSpringsColorProfile.restingPositionProperty
       }
     );
 
