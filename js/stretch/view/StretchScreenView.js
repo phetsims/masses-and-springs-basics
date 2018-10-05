@@ -14,9 +14,11 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
+  var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   var Property = require( 'AXON/Property' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
+  var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
   var Vector2 = require( 'DOT/Vector2' );
 
@@ -91,6 +93,25 @@ define( function( require ) {
 
     // Move this plane to the back of the scene graph
     this.backgroundDragNode.moveToBack();
+
+    // Shelves used for masses
+    var labeledMassesShelf = new Shelf( tandem, {
+      rectHeight: 7,
+      rectWidth: 145,
+      left: this.springSystemControlsNode.left - 150,
+      rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
+    } );
+    this.addChild(labeledMassesShelf);
+    labeledMassesShelf.moveToBack();
+
+    var mysteryMassesShelf = new Shelf( tandem, {
+      rectHeight: 7,
+      rectWidth: 120,
+      left: this.springSystemControlsNode.left + 10,
+      rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
+    } );
+    this.addChild(mysteryMassesShelf);
+    mysteryMassesShelf.moveToBack();
 
     this.visibleBoundsProperty.link( function() {
       optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
