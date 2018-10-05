@@ -15,6 +15,7 @@ define( function( require ) {
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
+  var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
   var VectorVisibilityControlNode = require( 'MASSES_AND_SPRINGS/vectors/view/VectorVisibilityControlNode' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
@@ -69,8 +70,15 @@ define( function( require ) {
       rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
     } );
 
-    this.shelf.rectWidth = 200;
-    this.shelf.left = this.springSystemControlsNode.left - 70;
+    // Shelf used for masses
+    var shelf = new Shelf( tandem, {
+      rectHeight: 7,
+      rectWidth: 200,
+      left: this.springSystemControlsNode.left - 70,
+      rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
+    } );
+    this.addChild(shelf);
+    shelf.moveToBack();
 
     // Move tools layer so ruler is always in front.
     this.toolsLayer.moveToFront();
