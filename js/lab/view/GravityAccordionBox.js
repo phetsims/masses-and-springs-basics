@@ -48,11 +48,7 @@ define( function( require ) {
       thumbFillEnabled: '#00C4DF',
       thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT,
       stroke: null,
-      sliderIndent: 7,
-      constrainValue: function( value ) {
-        value = Util.roundSymmetric( value * 100 / 3 ) * 3;
-        return value / 100;
-      }
+      sliderIndent: 7
     } );
     gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
       font: MassesAndSpringsConstants.LABEL_FONT,
