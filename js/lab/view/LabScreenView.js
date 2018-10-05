@@ -12,6 +12,7 @@ define( function( require ) {
   var inherit = require( 'PHET_CORE/inherit' );
   var PeriodTraceNode = require( 'MASSES_AND_SPRINGS/lab/view/PeriodTraceNode' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
+  var GravityAccordionBox = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/GravityAccordionBox' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
@@ -52,8 +53,6 @@ define( function( require ) {
       children: [
         new LineOptionsNode( model, tandem, { enableMovableLine: true, enablePeriodTrace: true } ),
         MassesAndSpringsConstants.LINE_SEPARATOR( 165 ),
-        this.gravityAndDampingControlNode,
-        MassesAndSpringsConstants.LINE_SEPARATOR( 165 ),
         vectorVisibilityControlNode
       ]
     } );
@@ -61,8 +60,13 @@ define( function( require ) {
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( optionsVBox, this.rightPanelAlignGroup, tandem );
 
+    var gravityBox = new GravityAccordionBox( model, this, tandem.createTandem( 'gravityAccordionBox' ) );
+
     // Contains all of the options for the reference lines, gravity, damping, and toolbox
-    var rightPanelsVBox = new VBox( { children: [ optionsPanel, self.toolboxPanel ], spacing: this.spacing * 0.9 } );
+    var rightPanelsVBox = new VBox( {
+      children: [ optionsPanel, gravityBox, self.toolboxPanel ],
+      spacing: this.spacing * 0.9
+    } );
     this.addChild( rightPanelsVBox );
     rightPanelsVBox.moveToBack();
 
@@ -77,7 +81,7 @@ define( function( require ) {
       left: this.springSystemControlsNode.left - 70,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
-    this.addChild(shelf);
+    this.addChild( shelf );
     shelf.moveToBack();
 
     // Move tools layer so ruler is always in front.
