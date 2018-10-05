@@ -42,7 +42,7 @@ define( function( require ) {
         model.addDefaultMasses( modelTandem );
         return model;
       },
-      function( model ) { return new BounceScreenView(model, tandem ); },
+      function( model ) { return new BounceScreenView( model, tandem ); },
       options
     );
   }

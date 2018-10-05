@@ -36,13 +36,14 @@ define( function( require ) {
 
     Screen.call( this,
       function() {
-      var modelTandem = tandem.createTandem( 'model' );
+        var modelTandem = tandem.createTandem( 'model' );
         var model = new MassesAndSpringsModel( modelTandem, options );
         model.addDefaultSprings( modelTandem );
         model.addDefaultMasses( modelTandem );
+        model.dampingProperty.set( 0.5 );
         return model;
-        },
-      function( model ) { return new StretchScreenView (model, tandem ); },
+      },
+      function( model ) { return new StretchScreenView( model, tandem ); },
       options
     );
   }
