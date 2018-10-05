@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AlignBox = require( 'SCENERY/nodes/AlignBox' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
@@ -28,22 +29,23 @@ define( function( require ) {
   var whatIsTheValueOfGravityString = require( 'string!MASSES_AND_SPRINGS/whatIsTheValueOfGravity' );
 
   // constants
-  var MAX_WIDTH = 80;
+  var MAX_WIDTH = 100;
 
   /**
    * @param {MassesAndSpringsModel} model
    * @param {Node} listNodeParent
+   * @param {AlignGroup} alignGroup
    * @param {Tandem} tandem
    *
    * @constructor
    */
-  function GravityAccordionBox( model, listNodeParent, tandem ) {
+  function GravityAccordionBox( model, listNodeParent, alignGroup, tandem ) {
 
     // Create gravity slider
     var gravitySlider = new HSlider( model.gravityProperty, MassesAndSpringsConstants.GRAVITY_RANGE, {
       majorTickLength: 5,
       minorTickLength: 5,
-      trackSize: new Dimension2( 130, 0.1 ),
+      trackSize: new Dimension2( 120, 0.1 ),
       thumbSize: new Dimension2( 13, 22 ),
       thumbFillEnabled: '#00C4DF',
       thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT,
@@ -53,12 +55,12 @@ define( function( require ) {
     gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
       font: MassesAndSpringsConstants.LABEL_FONT,
       tandem: tandem.createTandem( 'gravityNoneString' ),
-      maxWidth: MAX_WIDTH
+      maxWidth: MAX_WIDTH * 0.5
     } ) );
     gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.max, new Text( lotsString, {
       font: MassesAndSpringsConstants.LABEL_FONT,
       tandem: tandem.createTandem( 'gravityLotsString' ),
-      maxWidth: MAX_WIDTH
+      maxWidth: MAX_WIDTH * 0.5
     } ) );
 
     // Text that reads "What is the value of gravity?"
@@ -74,7 +76,7 @@ define( function( require ) {
     Body.BODIES.forEach( function( body ) {
       var bodyLabel = new Text( body.title, {
         font: MassesAndSpringsConstants.LABEL_FONT,
-        maxWidth: MAX_WIDTH * 2,
+        maxWidth: MAX_WIDTH,
         tandem: tandem.createTandem( 'bodyLabel' )
       } );
       bodyLabel.localBounds = bodyLabel.localBounds.withX( 50 );
@@ -117,7 +119,7 @@ define( function( require ) {
           Body.CUSTOM.gravity = model.gravityProperty.value;
         }
       }
-    });
+    } );
 
     var accordionBoxContent = new VBox( {
       children: [
@@ -126,11 +128,12 @@ define( function( require ) {
       ], spacing: 4
     } );
 
-    AccordionBox.call( this, accordionBoxContent, {
+    AccordionBox.call( this, new AlignBox( accordionBoxContent, { alignGroup: alignGroup } ), {
       buttonYMargin: 4,
-      contentXMargin:33,
+      contentXMargin: 27,
       cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
-      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT } )
+      minWidth: 224,
+      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } )
     } );
   }
 
