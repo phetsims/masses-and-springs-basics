@@ -97,8 +97,8 @@ define( function( require ) {
     // Shelves used for masses
     var labeledMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
-      rectWidth: 145,
-      left: this.springSystemControlsNode.left - 150,
+      rectWidth: 195,
+      left: this.springSystemControlsNode.left - 147,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
     this.addChild(labeledMassesShelf);
@@ -107,7 +107,7 @@ define( function( require ) {
     var mysteryMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
       rectWidth: 120,
-      left: this.springSystemControlsNode.left + 10,
+      left: this.springSystemControlsNode.left + 73,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
     this.addChild(mysteryMassesShelf);
