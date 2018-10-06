@@ -112,7 +112,7 @@ define( function( require ) {
     // Shelves used for masses
     var labeledMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
-      rectWidth: 195,
+      rectWidth: 185,
       left: this.springSystemControlsNode.left - 147,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
