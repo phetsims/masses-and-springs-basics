@@ -122,7 +122,7 @@ define( function( require ) {
     var mysteryMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
       rectWidth: 120,
-      left: this.springSystemControlsNode.left + 73,
+      left: this.springSystemControlsNode.left + 62,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
     this.addChild(mysteryMassesShelf);
