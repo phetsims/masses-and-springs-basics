@@ -40,7 +40,7 @@ define( function( require ) {
         var model = new MassesAndSpringsModel( modelTandem, options );
         model.addDefaultSprings( modelTandem );
         model.addDefaultMasses( modelTandem );
-        model.dampingProperty.set( 0.5 );
+        model.dampingProperty.set( 0.7 );
         return model;
       },
       function( model ) { return new StretchScreenView( model, tandem ); },
