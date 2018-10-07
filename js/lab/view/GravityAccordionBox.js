@@ -45,12 +45,10 @@ define( function( require ) {
     var gravitySlider = new HSlider( model.gravityProperty, MassesAndSpringsConstants.GRAVITY_RANGE, {
       majorTickLength: 5,
       minorTickLength: 5,
-      trackSize: new Dimension2( 120, 0.1 ),
+      trackSize: new Dimension2( 165, 0.1 ),
       thumbSize: new Dimension2( 13, 22 ),
       thumbFillEnabled: '#00C4DF',
-      thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT,
-      stroke: null,
-      sliderIndent: 7
+      thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT
     } );
     gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
       font: MassesAndSpringsConstants.LABEL_FONT,
@@ -79,7 +77,7 @@ define( function( require ) {
         maxWidth: MAX_WIDTH,
         tandem: tandem.createTandem( 'bodyLabel' )
       } );
-      bodyLabel.localBounds = bodyLabel.localBounds.withX( 50 );
+      bodyLabel.localBounds = bodyLabel.localBounds.withX( 107 );
 
       bodyListItems.push( {
         node: bodyLabel,
@@ -125,15 +123,16 @@ define( function( require ) {
       children: [
         gravitySlider,
         gravityComboBox
-      ], spacing: 4
+      ], spacing: 6
     } );
 
     AccordionBox.call( this, new AlignBox( accordionBoxContent, { alignGroup: alignGroup } ), {
       buttonYMargin: 4,
-      contentXMargin: 27,
+      contentXMargin: 0,
       cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
       minWidth: 224,
-      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } )
+      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } ),
+      titleAlignX:'left'
     } );
   }
 
