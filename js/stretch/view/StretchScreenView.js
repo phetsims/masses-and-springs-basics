@@ -9,12 +9,14 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Color = require( 'SCENERY/util/Color' );
   var DerivedProperty = require( 'AXON/DerivedProperty' );
   var DraggableRulerNode = require( 'MASSES_AND_SPRINGS/common/view/DraggableRulerNode' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  var OscillatingSpringNode = require( 'MASSES_AND_SPRINGS/common/view/OscillatingSpringNode' );
   var TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   var Property = require( 'AXON/Property' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
@@ -79,6 +81,23 @@ define( function( require ) {
 
     this.addChild( optionsPanel );
     optionsPanel.moveToBack();
+
+    // TODO: We are reinitializing this.springNodes. Is this the best way to handle this? Ask JO
+    // @public {Array.<OscillatingSpringNode>} Initialize a new array of springNodes with a different color selection.
+    this.springNodes = model.springs.map( function( spring ) {
+      var springNode = new OscillatingSpringNode(
+        spring,
+        self.modelViewTransform,
+        tandem.createTandem( 'oscillatingSpringNode' ), {
+          leftEndLength: -10,
+          frontColor: new Color('rgb( 227, 153, 221 )'),
+          middleColor: new Color('rgb( 185, 0, 169 )'),
+          backColor: new Color('rgb( 93, 0, 85 )')
+        }
+      );
+      self.addChild( springNode );
+      return springNode;
+    } );
 
     // @public {DraggableRulerNode}
     this.rulerNode = new DraggableRulerNode(
