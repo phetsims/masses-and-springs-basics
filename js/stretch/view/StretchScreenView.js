@@ -98,6 +98,7 @@ define( function( require ) {
       self.addChild( springNode );
       return springNode;
     } );
+    this.springSystemControlsNode.moveToFront();
 
     // @public {DraggableRulerNode}
     this.rulerNode = new DraggableRulerNode(
