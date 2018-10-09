@@ -90,9 +90,9 @@ define( function( require ) {
         self.modelViewTransform,
         tandem.createTandem( 'oscillatingSpringNode' ), {
           leftEndLength: -10,
-          frontColor: new Color('rgb( 227, 153, 221 )'),
-          middleColor: new Color('rgb( 185, 0, 169 )'),
-          backColor: new Color('rgb( 93, 0, 85 )')
+          frontColor: new Color('rgb( 162, 106, 172 )'),
+          middleColor: new Color('rgb( 100, 6, 117 )'),
+          backColor: new Color('rgb( 50, 3, 58 )')
         }
       );
       self.addChild( springNode );
