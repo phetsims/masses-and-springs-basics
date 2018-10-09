@@ -15,7 +15,9 @@ define( function( require ) {
   var GravityAccordionBox = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/GravityAccordionBox' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
+  var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
   var VectorVisibilityControlNode = require( 'MASSES_AND_SPRINGS/vectors/view/VectorVisibilityControlNode' );
   var VBox = require( 'SCENERY/nodes/VBox' );
@@ -83,6 +85,17 @@ define( function( require ) {
     } );
     this.addChild( shelf );
     shelf.moveToBack();
+
+    // @public {ReferenceLineNode} Initializes equilibrium line for an attached mass
+    var equilibriumLineNode = new ReferenceLineNode(
+      this.modelViewTransform,
+      model.firstSpring,
+      model.firstSpring.equilibriumYPositionProperty,
+      this.equilibriumVisibilityProperty, {
+        stroke: MassesAndSpringsColorProfile.restingPositionProperty
+      }
+    );
+    this.addChild(equilibriumLineNode);
 
     // Move tools layer so ruler is always in front.
     this.toolsLayer.moveToFront();

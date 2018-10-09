@@ -46,7 +46,7 @@ define( function( require ) {
     var firstMassEquilibriumLineNode = new ReferenceLineNode(
       this.modelViewTransform,
       model.firstSpring,
-      model.firstSpring.massEquilibriumYPositionProperty,
+      model.firstSpring.equilibriumYPositionProperty,
       firstMassEquilibriumVisibilityProperty, {
         stroke: MassesAndSpringsColorProfile.restingPositionProperty
       }
@@ -56,7 +56,7 @@ define( function( require ) {
     var secondMassEquilibriumLineNode = new ReferenceLineNode(
       this.modelViewTransform,
       model.secondSpring,
-      model.secondSpring.massEquilibriumYPositionProperty,
+      model.secondSpring.equilibriumYPositionProperty,
       secondMassEquilibriumVisibilityProperty, {
         stroke: MassesAndSpringsColorProfile.restingPositionProperty
       }
