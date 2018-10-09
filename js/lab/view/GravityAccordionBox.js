@@ -10,6 +10,7 @@ define( function( require ) {
 
   // modules
   var AlignBox = require( 'SCENERY/nodes/AlignBox' );
+  var BooleanProperty = require( 'AXON/BooleanProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
@@ -78,7 +79,6 @@ define( function( require ) {
         tandem: tandem.createTandem( 'bodyLabel' )
       } );
       bodyLabel.localBounds = bodyLabel.localBounds.withX( 107 );
-
       bodyListItems.push( {
         node: bodyLabel,
         value: body
@@ -132,7 +132,8 @@ define( function( require ) {
       cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
       minWidth: 224,
       titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } ),
-      titleAlignX:'left'
+      expandedProperty: new BooleanProperty( false ),
+      titleAlignX: 'left'
     } );
   }
 
