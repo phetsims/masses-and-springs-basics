@@ -21,7 +21,6 @@ define( function( require ) {
   var ComboBox = require( 'SUN/ComboBox' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var Node = require( 'SCENERY/nodes/Node' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
 
   // strings
   var lotsString = require( 'string!MASSES_AND_SPRINGS/lots' );
