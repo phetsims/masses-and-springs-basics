@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
@@ -18,6 +19,9 @@ define( function( require ) {
 
   // strings
   var screenLabString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.lab' );
+
+  // image
+  var labHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/bounce_screen_icon.png' );
 
   /**
    * @param {Tandem} tandem
@@ -31,6 +35,7 @@ define( function( require ) {
       basicsVersion: true,
       name: screenLabString,
       backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
+      homeScreenIcon: new Image( labHomeScreenImage ),
       tandem: tandem
     }, options );
 
