@@ -81,8 +81,6 @@ define( function( require ) {
       tandem
     );
 
-    this.springSystemControlsNode.moveToFront();
-
     // Contains all of the options for the reference lines, gravity, damping, and toolbox
     var rightPanelsVBox = new VBox( { children: [ optionsPanel, self.toolboxPanel ], spacing: this.spacing * 0.9 } );
     this.addChild( rightPanelsVBox );

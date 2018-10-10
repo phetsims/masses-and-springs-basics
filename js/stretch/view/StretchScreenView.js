@@ -65,9 +65,6 @@ define( function( require ) {
       }
     );
 
-    // Adding system controls to scene graph
-    this.addChild( this.springSystemControlsNode );
-
     // TODO: We are reinitializing this.springNodes. Is this the best way to handle this? Ask JO
     // @public {Array.<OscillatingSpringNode>} Initialize a new array of springNodes with a different color selection.
     this.springNodes = model.springs.map( function( spring ) {
@@ -84,6 +81,8 @@ define( function( require ) {
       self.addChild( springNode );
       return springNode;
     } );
+    // Adding system controls to scene graph
+    this.addChild( this.springSystemControlsNode );
 
     // Reference lines from indicator visibility box
     this.addChild( this.firstNaturalLengthLineNode );
