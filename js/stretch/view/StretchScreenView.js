@@ -65,22 +65,8 @@ define( function( require ) {
       }
     );
 
-    // Reference lines from indicator visibility box
-    this.addChild( firstMassEquilibriumLineNode );
-    this.addChild( secondMassEquilibriumLineNode );
-
-    // We do this to prevent overlap with the massNodes.
-    firstMassEquilibriumLineNode.moveToBack();
-    secondMassEquilibriumLineNode.moveToBack();
-
-    // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
-
-    // Panel that will display all the toggleable options.
-    var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
-
-    this.addChild( optionsPanel );
-    optionsPanel.moveToBack();
+    // Adding system controls to scene graph
+    this.addChild( this.springSystemControlsNode );
 
     // TODO: We are reinitializing this.springNodes. Is this the best way to handle this? Ask JO
     // @public {Array.<OscillatingSpringNode>} Initialize a new array of springNodes with a different color selection.
@@ -98,7 +84,25 @@ define( function( require ) {
       self.addChild( springNode );
       return springNode;
     } );
-    this.springSystemControlsNode.moveToFront();
+
+    // Reference lines from indicator visibility box
+    this.addChild( this.firstNaturalLengthLineNode );
+    this.addChild( this.secondNaturalLengthLineNode );
+    this.addChild( firstMassEquilibriumLineNode );
+    this.addChild( secondMassEquilibriumLineNode );
+
+    // Adding layers for interactive elements
+    this.addChild( this.massLayer );
+    this.addChild( this.toolsLayer );
+
+    // Contains visibility options for the reference lines and displacement arrow
+    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
+
+    // Panel that will display all the toggleable options.
+    var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
+
+    this.addChild( optionsPanel );
+    optionsPanel.moveToBack();
 
     // @public {DraggableRulerNode}
     this.rulerNode = new DraggableRulerNode(

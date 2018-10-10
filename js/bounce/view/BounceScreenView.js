@@ -62,13 +62,17 @@ define( function( require ) {
       }
     );
 
+    // Adding system controls to scene graph
+    this.addChild( this.springSystemControlsNode );
+
     // Reference lines from indicator visibility box
+    this.addChild( this.firstNaturalLengthLineNode );
+    this.addChild( this.secondNaturalLengthLineNode );
     this.addChild( firstMassEquilibriumLineNode );
     this.addChild( secondMassEquilibriumLineNode );
-
-    // We do this to prevent overlap with the massNodes.
-    firstMassEquilibriumLineNode.moveToBack();
-    secondMassEquilibriumLineNode.moveToBack();
+    this.addChild( this.movableLineNode );
+    this.addChild( this.massLayer );
+    this.addChild( this.toolsLayer );
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel(

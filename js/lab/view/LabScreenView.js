@@ -97,7 +97,8 @@ define( function( require ) {
     );
     this.addChild(equilibriumLineNode);
 
-    // Move tools layer so ruler is always in front.
+    // Move layers with interactive elements to the front
+    this.massLayer.moveToFront();
     this.toolsLayer.moveToFront();
 
     // Move this plane to the back of the scene graph
