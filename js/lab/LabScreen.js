@@ -21,7 +21,7 @@ define( function( require ) {
   var screenLabString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.lab' );
 
   // image
-  var labHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/bounce_screen_icon.png' );
+  var labHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/lab_screen_icon.png' );
 
   /**
    * @param {Tandem} tandem
