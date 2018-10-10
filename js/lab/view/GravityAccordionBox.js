@@ -65,7 +65,8 @@ define( function( require ) {
     // Text that reads "What is the value of gravity?"
     var questionTextNode = new Node( {
       children: [ new Text( whatIsTheValueOfGravityString, {
-        font: MassesAndSpringsConstants.TITLE_FONT
+        font: MassesAndSpringsConstants.TITLE_FONT,
+        maxWidth:MAX_WIDTH*2
       } ) ]
     } );
 
