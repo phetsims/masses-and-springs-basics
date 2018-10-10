@@ -101,6 +101,7 @@ define( function( require ) {
 
       // Set visibility of question node
       questionTextNode.visible = body === Body.PLANET_X;
+      gravitySlider.visible = !questionTextNode.visible;
 
       // If it's not custom, set it to its value
       if ( body !== Body.CUSTOM ) {
@@ -119,12 +120,17 @@ define( function( require ) {
       }
     } );
 
-    var accordionBoxContent = new VBox( {
+    var accordionBoxContent = new Node( {
       children: [
         gravitySlider,
+        questionTextNode,
         gravityComboBox
-      ], spacing: 6
+      ]
     } );
+
+    // Alignments of accordion box content
+    gravityComboBox.top = gravitySlider.top + 45;
+    questionTextNode.center = gravitySlider.center;
 
     AccordionBox.call( this, new AlignBox( accordionBoxContent, { alignGroup: alignGroup } ), {
       buttonYMargin: 4,
