@@ -80,7 +80,7 @@ define( function( require ) {
     var shelf = new Shelf( tandem, {
       rectHeight: 7,
       rectWidth: 200,
-      left: this.springSystemControlsNode.left - 70,
+      left: this.visibleBoundsProperty.value.left + this.spacing,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
     this.addChild( shelf );
