@@ -91,7 +91,6 @@ define( function( require ) {
     this.addChild( secondMassEquilibriumLineNode );
 
     // The movable line will always be visible on this screen.
-    model.movableLineVisibleProperty.set(true);
     this.addChild( this.movableLineNode );
 
     // Adding layers for interactive elements
