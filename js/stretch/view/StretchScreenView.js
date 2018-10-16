@@ -89,13 +89,14 @@ define( function( require ) {
     this.addChild( this.secondNaturalLengthLineNode );
     this.addChild( firstMassEquilibriumLineNode );
     this.addChild( secondMassEquilibriumLineNode );
+    this.addChild( this.movableLineNode );
 
     // Adding layers for interactive elements
     this.addChild( this.massLayer );
     this.addChild( this.toolsLayer );
 
     // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
+    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: true } );
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
