@@ -98,6 +98,7 @@ define( function( require ) {
     this.addChild(equilibriumLineNode);
 
     // Move layers with interactive elements to the front
+    this.movableLineNode.moveToFront();
     this.massLayer.moveToFront();
     this.toolsLayer.moveToFront();
 
