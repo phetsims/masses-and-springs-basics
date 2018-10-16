@@ -43,7 +43,6 @@ define( function( require ) {
       fill: MassesAndSpringsConstants.PANEL_FILL,
       tandem: tandem.createTandem( 'lineOptionsPanel' ),
       minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10,
-      enableMovableLine: true,
       enablePeriodTrace: false
     }, options );
 
@@ -74,13 +73,15 @@ define( function( require ) {
       tandem: tandem.createTandem( 'restingPositionString' )
     } ), { xAlign: 'left', group: alignGroup } );
 
-    // Create checkboxes using align boxes above
     var lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
       node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
       property: model.naturalLengthVisibleProperty
     }, {
       node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
       property: model.equilibriumPositionVisibleProperty
+    }, {
+      node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
+      property: model.movableLineVisibleProperty
     } ], {
       checkboxOptions: {
         boxWidth: 16,
@@ -88,25 +89,6 @@ define( function( require ) {
       },
       tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
     } );
-
-    if ( options.enableMovableLine ) {
-      lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
-        node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
-        property: model.naturalLengthVisibleProperty
-      }, {
-        node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
-        property: model.equilibriumPositionVisibleProperty
-      }, {
-        node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
-        property: model.movableLineVisibleProperty
-      } ], {
-        checkboxOptions: {
-          boxWidth: 16,
-          spacing: 8
-        },
-        tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
-      } );
-    }
 
     if ( options.enableMovableLine && options.enablePeriodTrace ) {
       lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
@@ -118,7 +100,7 @@ define( function( require ) {
       }, {
         node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
         property: model.movableLineVisibleProperty
-      },{
+      }, {
         node: new Text( periodTraceString, {
           font: MassesAndSpringsConstants.TITLE_FONT,
           maxWidth: CONTENT_MAX_WIDTH,

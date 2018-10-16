@@ -76,7 +76,7 @@ define( function( require ) {
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel(
-      new LineOptionsNode( model, tandem, { enableMovableLine: true } ),
+      new LineOptionsNode( model, tandem ),
       this.rightPanelAlignGroup,
       tandem
     );

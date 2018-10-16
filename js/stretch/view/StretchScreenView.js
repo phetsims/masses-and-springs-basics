@@ -99,7 +99,7 @@ define( function( require ) {
     this.addChild( this.toolsLayer );
 
     // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
+    var lineOptionsPanel = new LineOptionsNode( model, tandem );
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
