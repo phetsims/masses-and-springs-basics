@@ -73,9 +73,9 @@ define( function( require ) {
         self.modelViewTransform,
         tandem.createTandem( 'oscillatingSpringNode' ), {
           leftEndLength: -10,
-          frontColor: new Color('rgb( 162, 106, 172 )'),
-          middleColor: new Color('rgb( 100, 6, 117 )'),
-          backColor: new Color('rgb( 50, 3, 58 )')
+          frontColor: new Color( 'rgb( 162, 106, 172 )' ),
+          middleColor: new Color( 'rgb( 100, 6, 117 )' ),
+          backColor: new Color( 'rgb( 50, 3, 58 )' )
         }
       );
       self.addChild( springNode );
@@ -124,19 +124,19 @@ define( function( require ) {
     var labeledMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
       rectWidth: 185,
-      left: this.springSystemControlsNode.left - 147,
+      left: this.layoutBounds.left + this.spacing,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
-    this.addChild(labeledMassesShelf);
+    this.addChild( labeledMassesShelf );
     labeledMassesShelf.moveToBack();
 
     var mysteryMassesShelf = new Shelf( tandem, {
       rectHeight: 7,
       rectWidth: 120,
-      left: this.springSystemControlsNode.left + 62,
+      left: labeledMassesShelf.right + this.spacing * 2,
       rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
     } );
-    this.addChild(mysteryMassesShelf);
+    this.addChild( mysteryMassesShelf );
     mysteryMassesShelf.moveToBack();
 
     this.visibleBoundsProperty.link( function() {
