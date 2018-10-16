@@ -89,6 +89,9 @@ define( function( require ) {
     this.addChild( this.secondNaturalLengthLineNode );
     this.addChild( firstMassEquilibriumLineNode );
     this.addChild( secondMassEquilibriumLineNode );
+
+    // The movable line will always be visible on this screen.
+    model.movableLineVisibleProperty.set(true);
     this.addChild( this.movableLineNode );
 
     // Adding layers for interactive elements
@@ -96,7 +99,7 @@ define( function( require ) {
     this.addChild( this.toolsLayer );
 
     // Contains visibility options for the reference lines and displacement arrow
-    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: true } );
+    var lineOptionsPanel = new LineOptionsNode( model, tandem, { enableMovableLine: false } );
 
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
