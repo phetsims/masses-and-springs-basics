@@ -90,7 +90,7 @@ define( function( require ) {
       tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
     } );
 
-    if ( options.enableMovableLine ) {
+    if ( options.enablePeriodTrace ) {
       lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
         node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
         property: model.naturalLengthVisibleProperty
