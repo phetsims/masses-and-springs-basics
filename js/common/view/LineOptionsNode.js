@@ -24,7 +24,6 @@ define( function( require ) {
   // strings
   var restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
   var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
-  var periodTraceString = require( 'string!MASSES_AND_SPRINGS/periodTrace' );
   var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
 
   // constants
@@ -42,8 +41,7 @@ define( function( require ) {
     options = _.extend( {
       fill: MassesAndSpringsConstants.PANEL_FILL,
       tandem: tandem.createTandem( 'lineOptionsPanel' ),
-      minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10,
-      enablePeriodTrace: false
+      minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10
     }, options );
 
     Node.call( this, options );
@@ -100,13 +98,6 @@ define( function( require ) {
       }, {
         node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
         property: model.movableLineVisibleProperty
-      }, {
-        node: new Text( periodTraceString, {
-          font: MassesAndSpringsConstants.TITLE_FONT,
-          maxWidth: CONTENT_MAX_WIDTH,
-          tandem: tandem.createTandem( 'periodTraceString' )
-        } ),
-        property: model.firstSpring.periodTraceVisibilityProperty
       } ], {
         checkboxOptions: {
           boxWidth: 16,

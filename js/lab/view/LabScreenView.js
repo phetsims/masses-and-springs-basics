@@ -53,7 +53,7 @@ define( function( require ) {
     var optionsVBox = new VBox( {
       spacing: 10,
       children: [
-        new LineOptionsNode( model, tandem, { enablePeriodTrace: true } ),
+        new LineOptionsNode( model, tandem ),
         MassesAndSpringsConstants.LINE_SEPARATOR( 165 ),
         vectorVisibilityControlNode
       ]
