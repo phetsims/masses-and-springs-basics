@@ -23,11 +23,12 @@ define( function( require ) {
   // constants
   var tandem = Tandem.rootTandem;
 
+  // Todo: Correct credits.
   var simOptions = {
     credits: {
       leadDesign: '',
       softwareDevelopment: '',
-      team: '',
+      team: 'and in cooperation with the Next-Lab project',
       qualityAssurance: ''
     }
   };
