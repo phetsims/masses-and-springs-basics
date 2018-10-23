@@ -119,6 +119,7 @@ define( function( require ) {
     this.visibleBoundsProperty.link( function() {
       rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
       self.springSystemControlsNode.centerX = self.springCenter * 0.805; // centering springHangerNode over spring
+      self.springConstantControlPanel.left = self.springSystemControlsNode.right + self.spacing;
     } );
   }
 
