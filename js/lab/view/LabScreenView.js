@@ -16,6 +16,7 @@ define( function( require ) {
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
+  var MassValueControlPanel = require( 'MASSES_AND_SPRINGS/common/view/MassValueControlPanel' );
   var OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
@@ -36,7 +37,7 @@ define( function( require ) {
     var self = this;
 
     // @protected {PeriodTraceNode}
-    this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform,  model.options.basicsVersion, {
+    this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
       center: this.massEquilibriumLineNode.center
     } );
     this.addChild( this.periodTraceNode );
@@ -72,10 +73,6 @@ define( function( require ) {
     this.addChild( rightPanelsVBox );
     rightPanelsVBox.moveToBack();
 
-    this.visibleBoundsProperty.link( function() {
-      rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
-    } );
-
     // Shelf used for masses
     var shelf = new Shelf( tandem, {
       rectHeight: 7,
@@ -95,7 +92,21 @@ define( function( require ) {
         stroke: MassesAndSpringsColorProfile.restingPositionProperty
       }
     );
-    this.addChild(equilibriumLineNode);
+    this.addChild( equilibriumLineNode );
+
+    // @public {MassValueControlPanel} Accessed in Basics version to adjust to a larger width.
+    var massValueControlPanel = new MassValueControlPanel(
+      model.masses[ 0 ],
+      this.massNodeIcon,
+      tandem.createTandem( 'massValueControlPanel' ), {
+        basicsVersion: model.options.basicsVersion
+      }
+    );
+
+    this.springSystemControlsNode.setChildren( [
+      massValueControlPanel, this.springHangerNode, this.springStopperButtonNode
+    ] );
+    this.springSystemControlsNode.spacing = this.spacing * 1.2;
 
     // Move layers with interactive elements to the front
     this.movableLineNode.moveToFront();
@@ -104,6 +115,11 @@ define( function( require ) {
 
     // Move this plane to the back of the scene graph
     this.backgroundDragNode.moveToBack();
+
+    this.visibleBoundsProperty.link( function() {
+      rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
+      self.springSystemControlsNode.centerX = self.springCenter * 0.805; // centering springHangerNode over spring
+    } );
   }
 
   massesAndSpringsBasics.register( 'LabScreenView', LabScreenView );
