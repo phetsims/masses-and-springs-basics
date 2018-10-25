@@ -109,7 +109,7 @@ define( function( require ) {
           return periodTraceVisible || accelerationVectorVisible || velocityVectorVisible;
         }
         else {
-          return false
+          return false;
         }
       } );
 
