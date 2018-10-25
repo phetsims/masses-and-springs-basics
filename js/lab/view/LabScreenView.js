@@ -134,7 +134,7 @@ define( function( require ) {
       model.masses[ 0 ],
       this.massNodeIcon,
       tandem.createTandem( 'massValueControlPanel' ), {
-        yMargin: 5,
+        maxWidth: MassesAndSpringsConstants.PANEL_MAX_WIDTH + MassesAndSpringsConstants.PANEL_MAX_WIDTH * 0.05,
         basicsVersion: model.options.basicsVersion
       }
     );
@@ -154,7 +154,7 @@ define( function( require ) {
 
     this.visibleBoundsProperty.link( function() {
       rightPanelsVBox.rightTop = new Vector2( self.panelRightSpacing, self.spacing );
-      self.springSystemControlsNode.centerX = self.springCenter * 0.805; // centering springHangerNode over spring
+      self.springSystemControlsNode.centerX = self.springCenter * 0.835; // centering springHangerNode over spring
       self.springConstantControlPanel.left = self.springSystemControlsNode.right + self.spacing;
     } );
   }
