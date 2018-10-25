@@ -9,6 +9,7 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var DerivedProperty = require( 'AXON/DerivedProperty' );
   var inherit = require( 'PHET_CORE/inherit' );
   var PeriodTraceNode = require( 'MASSES_AND_SPRINGS/lab/view/PeriodTraceNode' );
   var LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
@@ -20,6 +21,7 @@ define( function( require ) {
   var OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
+  var Text = require( 'SCENERY/nodes/Text' );
   var VectorVisibilityControlNode = require( 'MASSES_AND_SPRINGS/vectors/view/VectorVisibilityControlNode' );
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
@@ -93,6 +95,39 @@ define( function( require ) {
       }
     );
     this.addChild( equilibriumLineNode );
+
+    var oscillationVisibilityProperty = new DerivedProperty(
+      [
+        model.equilibriumPositionVisibleProperty,
+        model.firstSpring.periodTraceVisibilityProperty,
+        model.accelerationVectorVisibilityProperty,
+        model.velocityVectorVisibilityProperty,
+        model.firstSpring.massAttachedProperty
+      ],
+      function( equilibriumPositionVisible, periodTraceVisible, accelerationVectorVisible, velocityVectorVisible, massAttached ) {
+        if ( massAttached ) {
+          return periodTraceVisible || accelerationVectorVisible || velocityVectorVisible;
+        }
+        else {
+          return false
+        }
+      } );
+
+    // Initializes center of oscillation line for an attached mass
+    var centerOfOscillationLineNode = new ReferenceLineNode(
+      this.modelViewTransform,
+      model.firstSpring,
+      model.firstSpring.massEquilibriumYPositionProperty,
+      oscillationVisibilityProperty, {
+        stroke: 'black',
+        label: new Text( 'test', {
+          font: MassesAndSpringsConstants.TITLE_FONT,
+          fill: 'black',
+          maxWidth: 125
+        } )
+      }
+    );
+    this.addChild( centerOfOscillationLineNode );
 
     // @public {MassValueControlPanel} Accessed in Basics version to adjust to a larger width.
     var massValueControlPanel = new MassValueControlPanel(
