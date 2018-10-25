@@ -134,6 +134,7 @@ define( function( require ) {
       model.masses[ 0 ],
       this.massNodeIcon,
       tandem.createTandem( 'massValueControlPanel' ), {
+        yMargin: 5,
         basicsVersion: model.options.basicsVersion
       }
     );
