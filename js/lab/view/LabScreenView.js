@@ -26,6 +26,9 @@ define( function( require ) {
   var VBox = require( 'SCENERY/nodes/VBox' );
   var Vector2 = require( 'DOT/Vector2' );
 
+  // strings
+  var centerOfOscillationString = require( 'string!MASSES_AND_SPRINGS_BASICS/centerOfOscillation' );
+
   /**
    * @param {LabModel} model
    * @param {Tandem} tandem
@@ -120,7 +123,7 @@ define( function( require ) {
       model.firstSpring.massEquilibriumYPositionProperty,
       oscillationVisibilityProperty, {
         stroke: 'black',
-        label: new Text( 'testing', {
+        label: new Text( centerOfOscillationString, {
           font: MassesAndSpringsConstants.TITLE_FONT,
           fill: 'black',
           maxWidth: 125
