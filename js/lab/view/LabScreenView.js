@@ -120,7 +120,7 @@ define( function( require ) {
       model.firstSpring.massEquilibriumYPositionProperty,
       oscillationVisibilityProperty, {
         stroke: 'black',
-        label: new Text( 'test', {
+        label: new Text( 'testing', {
           font: MassesAndSpringsConstants.TITLE_FONT,
           fill: 'black',
           maxWidth: 125
