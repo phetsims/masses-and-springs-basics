@@ -9,13 +9,13 @@ define( function( require ) {
   'use strict';
 
   // modules
-  var StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
+  var BounceScreen = require( 'MASSES_AND_SPRINGS_BASICS/bounce/BounceScreen' );
   var LabScreen = require( 'MASSES_AND_SPRINGS_BASICS/lab/LabScreen' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var Sim = require( 'JOIST/Sim' );
   var SimLauncher = require( 'JOIST/SimLauncher' );
+  var StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
   var Tandem = require( 'TANDEM/Tandem' );
-  var BounceScreen = require( 'MASSES_AND_SPRINGS_BASICS/bounce/BounceScreen' );
 
   // strings
   var massesAndSpringsBasicsTitleString = require( 'string!MASSES_AND_SPRINGS_BASICS/masses-and-springs-basics.title' );

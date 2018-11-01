@@ -9,23 +9,23 @@ define( function( require ) {
   'use strict';
 
   // modules
+  var AccordionBox = require( 'SUN/AccordionBox' );
   var AlignBox = require( 'SCENERY/nodes/AlignBox' );
+  var Body = require( 'MASSES_AND_SPRINGS/common/model/Body' );
   var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var inherit = require( 'PHET_CORE/inherit' );
+  var ComboBox = require( 'SUN/ComboBox' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
+  var inherit = require( 'PHET_CORE/inherit' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var AccordionBox = require( 'SUN/AccordionBox' );
-  var Body = require( 'MASSES_AND_SPRINGS/common/model/Body' );
-  var ComboBox = require( 'SUN/ComboBox' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   var Node = require( 'SCENERY/nodes/Node' );
+  var Text = require( 'SCENERY/nodes/Text' );
 
   // strings
+  var gravityString = require( 'string!MASSES_AND_SPRINGS/gravity' );
   var lotsString = require( 'string!MASSES_AND_SPRINGS/lots' );
   var noneString = require( 'string!MASSES_AND_SPRINGS/none' );
-  var gravityString = require( 'string!MASSES_AND_SPRINGS/gravity' );
   var whatIsTheValueOfGravityString = require( 'string!MASSES_AND_SPRINGS/whatIsTheValueOfGravity' );
 
   // constants

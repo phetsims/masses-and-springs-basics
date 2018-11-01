@@ -11,11 +11,11 @@ define( function( require ) {
   // modules
   var Image = require( 'SCENERY/nodes/Image' );
   var inherit = require( 'PHET_CORE/inherit' );
+  var LabModel = require( 'MASSES_AND_SPRINGS/lab/model/LabModel' );
+  var LabScreenView = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/LabScreenView' );
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
-  var LabModel = require( 'MASSES_AND_SPRINGS/lab/model/LabModel' );
   var Screen = require( 'JOIST/Screen' );
-  var LabScreenView = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/LabScreenView' );
 
   // strings
   var screenLabString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.lab' );

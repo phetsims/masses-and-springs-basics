@@ -22,8 +22,8 @@ define( function( require ) {
   var VerticalCheckboxGroup = require( 'SUN/VerticalCheckboxGroup' );
 
   // strings
-  var restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
   var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
+  var restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
   var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
 
   // constants
