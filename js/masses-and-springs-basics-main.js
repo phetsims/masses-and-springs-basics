@@ -26,9 +26,9 @@ define( function( require ) {
   // Todo: Correct credits.
   var simOptions = {
     credits: {
-      leadDesign: '',
-      softwareDevelopment: '',
-      team: 'and in cooperation with the Next-Lab project',
+      leadDesign: 'Amy Rouinfar, Mike Dubson',
+      softwareDevelopment: 'Denzell Barnett',
+      team: 'Wendy Adams, Ariel Paul, Kathy Perkins in cooperation with the Next-Lab project',
       qualityAssurance: ''
     }
   };
