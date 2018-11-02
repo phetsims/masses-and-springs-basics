@@ -27,8 +27,8 @@ define( function( require ) {
   var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
 
   // constants
-  var CONTENT_MAX_WIDTH = 115;
-  var CONTENT_SPACING = 36;
+  var CONTENT_MAX_WIDTH = 122;
+  var CONTENT_SPACING = 32;
 
   /**
    * @param {MassesAndSpringsModel} model
