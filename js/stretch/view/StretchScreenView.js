@@ -17,7 +17,9 @@ define( function( require ) {
   var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   var MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  var MutableOptionsNode = require( 'SUN/MutableOptionsNode' );
   var OscillatingSpringNode = require( 'MASSES_AND_SPRINGS/common/view/OscillatingSpringNode' );
+  var PaintColorProperty = require( 'SCENERY/util/PaintColorProperty' );
   var Property = require( 'AXON/Property' );
   var ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
   var Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
@@ -65,22 +67,11 @@ define( function( require ) {
       }
     );
 
-    // TODO: We are reinitializing this.springNodes. Is this the best way to handle this? Ask JO
-    // @public {Array.<OscillatingSpringNode>} Initialize a new array of springNodes with a different color selection.
-    this.springNodes = model.springs.map( function( spring ) {
-      var springNode = new OscillatingSpringNode(
-        spring,
-        self.modelViewTransform,
-        tandem.createTandem( 'oscillatingSpringNode' ), {
-          leftEndLength: -10,
-          frontColor: new Color( 'rgb( 162, 106, 172 )' ),
-          middleColor: new Color( 'rgb( 100, 6, 117 )' ),
-          backColor: new Color( 'rgb( 50, 3, 58 )' )
-        }
-      );
-      self.addChild( springNode );
-      return springNode;
-    } );
+    // Setting specific colors for this screen's springs.
+    this.springFrontColorProperty.set( new PaintColorProperty( 'rgb( 162, 106, 172 )' ) );
+    this.springMiddleColorProperty.set( new PaintColorProperty( 'rgb( 100, 6, 117 )' ) );
+    this.springBackColorProperty.set( new PaintColorProperty( 'rgb( 50, 3, 58 )' ) );
+
     // Adding system controls to scene graph
     this.addChild( this.springSystemControlsNode );
 
