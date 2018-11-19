@@ -41,12 +41,6 @@ define( function( require ) {
     OneSpringScreenView.call( this, model, tandem );
     var self = this;
 
-    // @protected {PeriodTraceNode}
-    this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
-      center: this.massEquilibriumLineNode.center
-    } );
-    this.addChild( this.periodTraceNode );
-
     var vectorVisibilityControlNode = new VectorVisibilityControlNode(
       model,
       tandem.createTandem( 'vectorVisibilityControlNode' ),
@@ -144,6 +138,13 @@ define( function( require ) {
       massValueControlPanel, this.springHangerNode, this.springStopperButtonNode
     ] );
     this.springSystemControlsNode.spacing = this.spacing * 1.2;
+
+    // @protected {PeriodTraceNode}
+    this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
+      center: this.massEquilibriumLineNode.center
+    } );
+    this.addChild( this.periodTraceNode );
+    this.periodTraceNode.moveToBack();
 
     // Move layers with interactive elements to the front
     this.movableLineNode.moveToFront();
