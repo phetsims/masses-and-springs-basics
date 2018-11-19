@@ -129,8 +129,8 @@ define( function( require ) {
 
     this.visibleBoundsProperty.link( function() {
       optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
-      self.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, self.spacing ) );
     } );
+    this.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, this.spacing ) );
 
     // Reset call here sets the ruler to its default position rather than resetting the positionProperty
     this.resetAllButton.addListener( function() {
