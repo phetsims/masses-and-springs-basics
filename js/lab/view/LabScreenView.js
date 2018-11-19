@@ -99,15 +99,13 @@ define( function( require ) {
     );
     this.addChild( equilibriumLineNode );
 
-    var oscillationVisibilityProperty = new DerivedProperty(
-      [
-        model.equilibriumPositionVisibleProperty,
+    var oscillationVisibilityProperty = new DerivedProperty( [
         model.firstSpring.periodTraceVisibilityProperty,
         model.accelerationVectorVisibilityProperty,
         model.velocityVectorVisibilityProperty,
         model.firstSpring.massAttachedProperty
       ],
-      function( equilibriumPositionVisible, periodTraceVisible, accelerationVectorVisible, velocityVectorVisible, massAttached ) {
+      function( periodTraceVisible, accelerationVectorVisible, velocityVectorVisible, massAttached ) {
         if ( massAttached ) {
           return periodTraceVisible || accelerationVectorVisible || velocityVectorVisible;
         }
