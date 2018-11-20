@@ -94,17 +94,6 @@ define( function( require ) {
     this.addChild( optionsPanel );
     optionsPanel.moveToBack();
 
-    // @public {DraggableRulerNode}
-    this.rulerNode = new DraggableRulerNode(
-      this.modelViewTransform,
-      this.visibleBoundsProperty.get(),
-      Vector2.ZERO,
-      new Property( true ),
-      function() { },
-      tandem.createTandem( 'rulerNode' )
-    );
-    this.addChild( this.rulerNode );
-
     // Move this plane to the back of the scene graph
     this.backgroundDragNode.moveToBack();
 
@@ -130,7 +119,17 @@ define( function( require ) {
     this.visibleBoundsProperty.link( function() {
       optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
     } );
-    this.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, this.spacing ) );
+
+    // @public {DraggableRulerNode}
+    this.rulerNode = new DraggableRulerNode(
+      this.modelViewTransform,
+      this.visibleBoundsProperty.get(),
+      new Vector2( this.visibleBoundsProperty.value.right - this.spacing, optionsPanel.bottom + this.spacing ),
+      new Property( true ),
+      function() { },
+      tandem.createTandem( 'rulerNode' )
+    );
+    this.addChild( this.rulerNode );
 
     // Reset call here sets the ruler to its default position rather than resetting the positionProperty
     this.resetAllButton.addListener( function() {
