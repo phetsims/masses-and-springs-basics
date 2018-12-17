@@ -91,7 +91,7 @@ define( function( require ) {
     } );
 
     // Move this plane to the back of the scene graph
-    this.backgroundDragNode.moveToBack();
+    this.backgroundDragPlane.moveToBack();
 
     // Shelves used for masses
     var labeledMassesShelf = new Shelf( tandem, {
