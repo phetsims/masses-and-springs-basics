@@ -1,11 +1,11 @@
 {
-  "comment": "# masses-and-springs-basics 1.0.0-dev.14 Mon Dec 17 2018 16:02:15 GMT-0500 (EST)",
+  "comment": "# masses-and-springs-basics 1.0.0-dev.15 Tue Dec 18 2018 20:22:34 GMT-0500 (EST)",
   "assert": {
     "sha": "69088d35b9e1971aee675d1aec7f413f4d0bef19",
     "branch": "master"
   },
   "axon": {
-    "sha": "a5b0df48aec068d015bca7b5abdd11aaf2cb878a",
+    "sha": "dd2910811f92b9aa07af3e426fe470308a099934",
     "branch": "master"
   },
   "brand": {
@@ -25,11 +25,11 @@
     "branch": "master"
   },
   "joist": {
-    "sha": "84f68aae4190f7b8208ffec1d08b1a9f9ddf5d40",
+    "sha": "b91e469a596eb2e2f206f93b15a299aef342b4da",
     "branch": "master"
   },
   "kite": {
-    "sha": "eccdc091b98524145621954f215d01ea4a6936ff",
+    "sha": "6c78a24fdf01ba21cb7037e7554d2aa81717d94a",
     "branch": "master"
   },
   "masses-and-springs": {
@@ -37,7 +37,7 @@
     "branch": "master"
   },
   "masses-and-springs-basics": {
-    "sha": "a642e05e54f8838fa09553dc21b16d08d18cc542",
+    "sha": "76831daef00ddbfc3f7a67661b8d4ef974825622",
     "branch": "master"
   },
   "phet-core": {
@@ -73,11 +73,11 @@
     "branch": "master"
   },
   "scenery": {
-    "sha": "a8bed784a1bed06fcc2754feca30c2388d2bdee2",
+    "sha": "2cbf350eb4cda98b5bc3bffec4a2174a063286c3",
     "branch": "master"
   },
   "scenery-phet": {
-    "sha": "cca63fc9d14346ec65db2374fdc9950eed45ff01",
+    "sha": "18733d782ba1a6cbfe09fff422b59909a86092d8",
     "branch": "master"
   },
   "sherpa": {
