@@ -135,6 +135,7 @@ define( function( require ) {
     // Reset call here sets the ruler to its default position rather than resetting the positionProperty
     this.resetAllButton.addListener( function() {
       self.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, self.spacing ) );
+      model.dampingProperty.set( 0.7 );
     } );
   }
 

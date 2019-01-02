@@ -45,6 +45,8 @@ define( function( require ) {
         var model = new MassesAndSpringsModel( modelTandem, options );
         model.addDefaultSprings( modelTandem );
         model.addDefaultMasses( modelTandem );
+
+        // It is intended that the stretch screen have a specific damping
         model.dampingProperty.set( 0.7 );
         return model;
       },
