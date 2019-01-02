@@ -116,10 +116,6 @@ define( function( require ) {
     this.addChild( mysteryMassesShelf );
     mysteryMassesShelf.moveToBack();
 
-    this.visibleBoundsProperty.link( function() {
-      optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
-    } );
-
     // @public {DraggableRulerNode}
     this.rulerNode = new DraggableRulerNode(
       this.modelViewTransform,
@@ -130,6 +126,11 @@ define( function( require ) {
       tandem.createTandem( 'rulerNode' )
     );
     this.addChild( this.rulerNode );
+
+    this.visibleBoundsProperty.link( function() {
+      optionsPanel.rightTop = new Vector2( self.panelRightSpacing, self.springSystemControlsNode.top );
+      self.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, self.spacing ) );
+    } );
 
     // Reset call here sets the ruler to its default position rather than resetting the positionProperty
     this.resetAllButton.addListener( function() {
