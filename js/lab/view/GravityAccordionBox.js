@@ -79,10 +79,7 @@ define( function( require ) {
         tandem: tandem.createTandem( 'bodyLabel' )
       } );
       bodyLabel.localBounds = bodyLabel.localBounds.withX( 107 );
-      bodyListItems.push( {
-        node: bodyLabel,
-        value: body
-      } );
+      bodyListItems.push( ComboBox.createItem( bodyLabel, body ) );
     } );
 
     // Manages the items associated with the gravity panel in a combo box
