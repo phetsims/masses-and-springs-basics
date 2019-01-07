@@ -12,8 +12,8 @@ define( function( require ) {
   var AccordionBox = require( 'SUN/AccordionBox' );
   var AlignBox = require( 'SCENERY/nodes/AlignBox' );
   var Body = require( 'MASSES_AND_SPRINGS/common/model/Body' );
+  var GravityComboBox = require( 'MASSES_AND_SPRINGS/common/view/GravityComboBox' );
   var BooleanProperty = require( 'AXON/BooleanProperty' );
-  var ComboBox = require( 'SUN/ComboBox' );
   var Dimension2 = require( 'DOT/Dimension2' );
   var HSlider = require( 'SUN/HSlider' );
   var inherit = require( 'PHET_CORE/inherit' );
@@ -69,21 +69,8 @@ define( function( require ) {
       } ) ]
     } );
 
-    //  Add gravity info for various planets
-    var bodyListItems = [];
-    var bodies = Body.BODIES;
-    Body.BODIES.forEach( function( body ) {
-      var bodyLabel = new Text( body.title, {
-        font: MassesAndSpringsConstants.LABEL_FONT,
-        maxWidth: MAX_WIDTH,
-        tandem: tandem.createTandem( 'bodyLabel' )
-      } );
-      bodyLabel.localBounds = bodyLabel.localBounds.withX( 107 );
-      bodyListItems.push( ComboBox.createItem( bodyLabel, body ) );
-    } );
-
     // Manages the items associated with the gravity panel in a combo box
-    var gravityComboBox = new ComboBox( bodyListItems, model.bodyProperty, listNodeParent, {
+    var gravityComboBox = new GravityComboBox( model.bodyProperty, listNodeParent, tandem, {
       buttonCornerRadius: 3,
       buttonYMargin: 0,
       itemYMargin: 3,
@@ -94,7 +81,7 @@ define( function( require ) {
 
     // Responsible for managing bodies
     model.bodyProperty.link( function( newBody, oldBody ) {
-      var body = _.find( bodies, newBody );
+      var body = _.find( Body.BODIES, newBody );
 
       // Set visibility of question node
       questionTextNode.visible = body === Body.PLANET_X;
