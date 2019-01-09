@@ -62,7 +62,12 @@ define( function( require ) {
     // Panel that will display all the toggleable options.
     var optionsPanel = this.createOptionsPanel( optionsVBox, this.rightPanelAlignGroup, tandem );
 
-    var gravityAccordionBox = new GravityAccordionBox( model, this, this.rightPanelAlignGroup, tandem.createTandem( 'gravityAccordionBox' ) );
+    var gravityAccordionBox = new GravityAccordionBox( model,
+      this,
+      this.rightPanelAlignGroup,
+      tandem.createTandem( 'gravityAccordionBox' ), {
+        expandedProperty: model.gravityAccordionBoxExpandedProperty
+      } );
 
     // Contains all of the options for the reference lines, gravity, damping, and toolbox
     var rightPanelsVBox = new VBox( {
