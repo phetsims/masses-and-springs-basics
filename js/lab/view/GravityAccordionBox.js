@@ -39,7 +39,17 @@ define( function( require ) {
    *
    * @constructor
    */
-  function GravityAccordionBox( model, listNodeParent, alignGroup, tandem ) {
+  function GravityAccordionBox( model, listNodeParent, alignGroup, tandem, options ) {
+
+    options = _.extend( {
+      buttonYMargin: 4,
+      contentXMargin: 0,
+      cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
+      minWidth: 224,
+      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } ),
+      expandedProperty: new BooleanProperty( false ),
+      titleAlignX: 'left'
+    }, options );
 
     // Create gravity slider
     var gravitySlider = new HSlider( model.gravityProperty, MassesAndSpringsConstants.GRAVITY_RANGE, {
@@ -65,7 +75,7 @@ define( function( require ) {
     var questionTextNode = new Node( {
       children: [ new Text( whatIsTheValueOfGravityString, {
         font: MassesAndSpringsConstants.TITLE_FONT,
-        maxWidth:MAX_WIDTH*2
+        maxWidth: MAX_WIDTH * 2
       } ) ]
     } );
 
@@ -116,15 +126,7 @@ define( function( require ) {
     gravityComboBox.top = gravitySlider.top + 45;
     questionTextNode.center = gravitySlider.center;
 
-    AccordionBox.call( this, new AlignBox( accordionBoxContent, { alignGroup: alignGroup } ), {
-      buttonYMargin: 4,
-      contentXMargin: 0,
-      cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
-      minWidth: 224,
-      titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } ),
-      expandedProperty: new BooleanProperty( false ),
-      titleAlignX: 'left'
-    } );
+    AccordionBox.call( this, new AlignBox( accordionBoxContent, { alignGroup: alignGroup } ), options );
   }
 
   massesAndSpringsBasics.register( 'GravityAccordionBox', GravityAccordionBox );
