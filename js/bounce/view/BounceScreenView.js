@@ -10,7 +10,6 @@ define( require => {
 
   // modules
   const DerivedProperty = require( 'AXON/DerivedProperty' );
-  const inherit = require( 'PHET_CORE/inherit' );
   const LineOptionsNode = require( 'MASSES_AND_SPRINGS_BASICS/common/view/LineOptionsNode' );
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
@@ -31,11 +30,11 @@ define( require => {
       super( model, tandem );
 
       // Equilibrium of mass is dependent on the mass being attached and the visibility of the equilibrium line.
-      let firstMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.firstSpring.massAttachedProperty ],
+      const firstMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.firstSpring.massAttachedProperty ],
         function( equilibriumPositionVisible, massAttached ) {
           return !!massAttached && equilibriumPositionVisible;
         } );
-      let secondMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.secondSpring.massAttachedProperty ],
+      const secondMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.secondSpring.massAttachedProperty ],
         function( equilibriumPositionVisible, massAttached ) {
           return !!massAttached && equilibriumPositionVisible;
         } );
