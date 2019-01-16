@@ -5,91 +5,74 @@
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( function( require ) {
+define( require => {
   'use strict';
 
   // modules
-  var AlignBox = require( 'SCENERY/nodes/AlignBox' );
-  var AlignGroup = require( 'SCENERY/nodes/AlignGroup' );
-  var Color = require( 'SCENERY/util/Color' );
-  var HBox = require( 'SCENERY/nodes/HBox' );
-  var inherit = require( 'PHET_CORE/inherit' );
-  var massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  var MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
-  var Node = require( 'SCENERY/nodes/Node' );
-  var Text = require( 'SCENERY/nodes/Text' );
-  var VBox = require( 'SCENERY/nodes/VBox' );
-  var VerticalCheckboxGroup = require( 'SUN/VerticalCheckboxGroup' );
+  const AlignBox = require( 'SCENERY/nodes/AlignBox' );
+  const AlignGroup = require( 'SCENERY/nodes/AlignGroup' );
+  const Color = require( 'SCENERY/util/Color' );
+  const HBox = require( 'SCENERY/nodes/HBox' );
+  const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
+  const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  const Node = require( 'SCENERY/nodes/Node' );
+  const Text = require( 'SCENERY/nodes/Text' );
+  const VBox = require( 'SCENERY/nodes/VBox' );
+  const VerticalCheckboxGroup = require( 'SUN/VerticalCheckboxGroup' );
 
   // strings
-  var movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
-  var restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
-  var unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
+  const movableLineString = require( 'string!MASSES_AND_SPRINGS/movableLine' );
+  const restingPositionString = require( 'string!MASSES_AND_SPRINGS_BASICS/restingPosition' );
+  const unstretchedLengthString = require( 'string!MASSES_AND_SPRINGS_BASICS/unstretchedLength' );
 
   // constants
-  var CONTENT_MAX_WIDTH = 122;
-  var CONTENT_SPACING = 32;
+  const CONTENT_MAX_WIDTH = 122;
+  const CONTENT_SPACING = 32;
 
-  /**
-   * @param {MassesAndSpringsModel} model
-   * @param {Tandem} tandem
-   * @param {Object} options
-   * @constructor
-   */
-  function LineOptionsNode( model, tandem, options ) {
+  class LineOptionsNode extends Node {
 
-    options = _.extend( {
-      fill: MassesAndSpringsConstants.PANEL_FILL,
-      tandem: tandem.createTandem( 'lineOptionsPanel' ),
-      minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10
-    }, options );
+    /**
+     * @param {MassesAndSpringsModel} model
+     * @param {Tandem} tandem
+     * @param {Object} options
+     * @constructor
+     */
+    constructor( model, tandem, options ) {
 
-    Node.call( this, options );
+      options = _.extend( {
+        fill: MassesAndSpringsConstants.PANEL_FILL,
+        tandem: tandem.createTandem( 'lineOptionsPanel' ),
+        minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10
+      }, options );
 
-    // Lines added for reference in panel
-    var greenLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb(0, 180, 0)' ), tandem.createTandem( 'greenLine' ) );
-    var blueLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 65, 66, 232 )' ), tandem.createTandem( 'blueLine' ) );
-    var redLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 255, 0, 0 )' ), tandem.createTandem( 'redLine' ) );
+      super( options );
 
-    var alignGroup = new AlignGroup( { matchVertical: false } );
+      // Lines added for reference in panel
+      const greenLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb(0, 180, 0)' ), tandem.createTandem( 'greenLine' ) );
+      const blueLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 65, 66, 232 )' ), tandem.createTandem( 'blueLine' ) );
+      const redLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 255, 0, 0 )' ), tandem.createTandem( 'redLine' ) );
 
-    var unstretchedLengthAlignBox = new AlignBox( new Text( unstretchedLengthString, {
-      font: MassesAndSpringsConstants.TITLE_FONT,
-      maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'unstretchedLengthString' )
-    } ), { xAlign: 'left', group: alignGroup } );
+      const alignGroup = new AlignGroup( { matchVertical: false } );
 
-    var movableLineAlignBox = new AlignBox( new Text( movableLineString, {
-      font: MassesAndSpringsConstants.TITLE_FONT,
-      maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'movableLineString' )
-    } ), { xAlign: 'left', group: alignGroup } );
+      const unstretchedLengthAlignBox = new AlignBox( new Text( unstretchedLengthString, {
+        font: MassesAndSpringsConstants.TITLE_FONT,
+        maxWidth: CONTENT_MAX_WIDTH,
+        tandem: tandem.createTandem( 'unstretchedLengthString' )
+      } ), { xAlign: 'left', group: alignGroup } );
 
-    var restingPositionAlignBox = new AlignBox( new Text( restingPositionString, {
-      font: MassesAndSpringsConstants.TITLE_FONT,
-      maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'restingPositionString' )
-    } ), { xAlign: 'left', group: alignGroup } );
+      const movableLineAlignBox = new AlignBox( new Text( movableLineString, {
+        font: MassesAndSpringsConstants.TITLE_FONT,
+        maxWidth: CONTENT_MAX_WIDTH,
+        tandem: tandem.createTandem( 'movableLineString' )
+      } ), { xAlign: 'left', group: alignGroup } );
 
-    var lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
-      node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
-      property: model.naturalLengthVisibleProperty
-    }, {
-      node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
-      property: model.equilibriumPositionVisibleProperty
-    }, {
-      node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
-      property: model.movableLineVisibleProperty
-    } ], {
-      checkboxOptions: {
-        boxWidth: 16,
-        spacing: 8
-      },
-      tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
-    } );
+      const restingPositionAlignBox = new AlignBox( new Text( restingPositionString, {
+        font: MassesAndSpringsConstants.TITLE_FONT,
+        maxWidth: CONTENT_MAX_WIDTH,
+        tandem: tandem.createTandem( 'restingPositionString' )
+      } ), { xAlign: 'left', group: alignGroup } );
 
-    if ( options.enablePeriodTrace ) {
-      lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
+      let lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
         node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
         property: model.naturalLengthVisibleProperty
       }, {
@@ -105,20 +88,37 @@ define( function( require ) {
         },
         tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
       } );
-    }
 
-    var lineOptionsControlsVBox = new VBox( {
-        children: [
-          lineOptionsCheckboxGroup
-        ],
-        align: 'left',
-        tandem: tandem.createTandem( 'lineOptionsControlsVBox' )
+      if ( options.enablePeriodTrace ) {
+        lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
+          node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
+          property: model.naturalLengthVisibleProperty
+        }, {
+          node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
+          property: model.equilibriumPositionVisibleProperty
+        }, {
+          node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
+          property: model.movableLineVisibleProperty
+        } ], {
+          checkboxOptions: {
+            boxWidth: 16,
+            spacing: 8
+          },
+          tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
+        } );
       }
-    );
-    this.addChild( lineOptionsControlsVBox );
+
+      const lineOptionsControlsVBox = new VBox( {
+          children: [
+            lineOptionsCheckboxGroup
+          ],
+          align: 'left',
+          tandem: tandem.createTandem( 'lineOptionsControlsVBox' )
+        }
+      );
+      this.addChild( lineOptionsControlsVBox );
+    }
   }
 
-  massesAndSpringsBasics.register( 'LineOptionsNode', LineOptionsNode );
-
-  return inherit( Node, LineOptionsNode );
+  return massesAndSpringsBasics.register( 'LineOptionsNode', LineOptionsNode );
 } );
