@@ -36,6 +36,7 @@ define( require => {
      * @param {Node} listNodeParent
      * @param {AlignGroup} alignGroup
      * @param {Tandem} tandem
+     * @param {Object} [options]
      *
      * @constructor
      */
