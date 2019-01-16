@@ -42,7 +42,8 @@ define( require => {
       options = _.extend( {
         fill: MassesAndSpringsConstants.PANEL_FILL,
         tandem: tandem.createTandem( 'lineOptionsPanel' ),
-        minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10
+        minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10,
+        enablePeriodTrace: false
       }, options );
 
       super( options );
