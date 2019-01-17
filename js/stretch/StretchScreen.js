@@ -39,8 +39,7 @@ define( require => {
         tandem: tandem
       }, options );
 
-      // TODO: Is function keyword needed here?
-      super( function() {
+      super( () => {
 
           // Reference for model tandem
           const modelTandem = tandem.createTandem( 'model' );
