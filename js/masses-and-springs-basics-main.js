@@ -35,7 +35,7 @@ define( require => {
   // Set the profile name for the ColorProfile used in this sim
   MassesAndSpringsColorProfile.profileNameProperty.set( 'basics' );
 
-  SimLauncher.launch( function() {
+  SimLauncher.launch( () => {
     const sim = new Sim( massesAndSpringsBasicsTitleString, [
       new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
       new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
