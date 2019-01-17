@@ -26,7 +26,7 @@ define( require => {
     /**
      * @param {VectorsModel} model
      * @param {Tandem} tandem
-     * @constructor
+     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, tandem ) {
 
@@ -64,6 +64,9 @@ define( require => {
       );
 
       // Setting specific colors for this screen's springs.
+      // REVIEW: This is setting the value of PaintColorProperty, which is generally meant only for it internally to do
+      // REVIEW: itself. It's effectively making e.g. springFrontColorProperty into a Property.<PaintColorProperty>,
+      // REVIEW: but it is documented as {PaintColorProperty} itself.
       this.springFrontColorProperty.set( new PaintColorProperty( 'rgb( 162, 106, 172 )' ) );
       this.springMiddleColorProperty.set( new PaintColorProperty( 'rgb( 100, 6, 117 )' ) );
       this.springBackColorProperty.set( new PaintColorProperty( 'rgb( 50, 3, 58 )' ) );

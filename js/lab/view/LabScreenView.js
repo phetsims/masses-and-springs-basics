@@ -33,7 +33,7 @@ define( require => {
      * @param {LabModel} model
      * @param {Tandem} tandem
      *
-     * @constructor
+     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, tandem ) {
 
@@ -86,6 +86,7 @@ define( require => {
       this.addChild( shelf );
       shelf.moveToBack();
 
+      // REVIEW: No visibility annotations on consts
       // @public {ReferenceLineNode} Initializes equilibrium line for an attached mass
       const equilibriumLineNode = new ReferenceLineNode(
         this.modelViewTransform,
@@ -128,6 +129,7 @@ define( require => {
       );
       this.addChild( centerOfOscillationLineNode );
 
+      // REVIEW: Local variables shouldn't have visibility
       // @public {MassValueControlPanel} Accessed in Basics version to adjust to a larger width.
       const massValueControlPanel = new MassValueControlPanel(
         model.masses[ 0 ],
@@ -143,7 +145,7 @@ define( require => {
       ] );
       this.springSystemControlsNode.spacing = this.spacing * 1.2;
 
-      // @protected {PeriodTraceNode}
+      // @protected {PeriodTraceNode} REVIEW: If protected, is there a subtype of this referencing periodTraceNode?
       this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
         center: this.massEquilibriumLineNode.center
       } );
@@ -166,8 +168,8 @@ define( require => {
     }
 
     /**
-     *
      * @param {number} dt
+     * REVIEW: Visibility (public presumably)?
      */
     step( dt ) {
       this.periodTraceNode.step( dt, this.model.playingProperty );

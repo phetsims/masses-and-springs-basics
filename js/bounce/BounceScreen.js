@@ -19,7 +19,7 @@ define( require => {
   // strings
   const screenBounceString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.bounce' );
 
-  // image
+  // images
   const bounceHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/bounce_screen_icon.png' );
 
   class BounceScreen extends Screen {
@@ -49,6 +49,7 @@ define( require => {
           model.addDefaultMasses( modelTandem );
           return model;
         },
+        // REVIEW: In general, do we need `tandem.createTandem( 'view' )`?
         model => { return new BounceScreenView( model, tandem ); },
         options
       );

@@ -35,7 +35,7 @@ define( require => {
      * @param {MassesAndSpringsModel} model
      * @param {Tandem} tandem
      * @param {Object} options
-     * @constructor
+     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, tandem, options ) {
 
@@ -49,6 +49,7 @@ define( require => {
       super( options );
 
       // Lines added for reference in panel
+      // REVIEW: No need to wrap these with Color objects (can pass the strings in directly)
       const greenLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb(0, 180, 0)' ), tandem.createTandem( 'greenLine' ) );
       const blueLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 65, 66, 232 )' ), tandem.createTandem( 'blueLine' ) );
       const redLine = MassesAndSpringsConstants.CREATE_LINE_ICON( new Color( 'rgb( 255, 0, 0 )' ), tandem.createTandem( 'redLine' ) );

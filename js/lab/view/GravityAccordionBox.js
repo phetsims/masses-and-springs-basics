@@ -38,7 +38,7 @@ define( require => {
      * @param {Tandem} tandem
      * @param {Object} [options]
      *
-     * @constructor
+     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, listNodeParent, alignGroup, tandem, options ) {
 
@@ -63,7 +63,7 @@ define( require => {
       } );
       gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
         font: MassesAndSpringsConstants.LABEL_FONT,
-        tandem: tandem.createTandem( 'gravityNoneString' ),
+        tandem: tandem.createTandem( 'gravityNoneString' ), // REVIEW: Tandem should be for the 'Text', not a 'String'?
         maxWidth: MAX_WIDTH * 0.5
       } ) );
       gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.max, new Text( lotsString, {

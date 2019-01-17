@@ -22,7 +22,7 @@ define( require => {
 
   class BounceScreenView extends TwoSpringScreenView {
     /**
-     * @param {VectorsModel} model
+     * @param {VectorsModel} model REVIEW: VectorsModel is a projectile-motion thing?
      * @param {Tandem} tandem
      */
     constructor( model, tandem ) {
@@ -101,6 +101,8 @@ define( require => {
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
       this.addChild( labeledMassesShelf );
+      // REVIEW: Rather than moving things to the very back, consider having layer Nodes on the supertype, so that
+      // REVIEW: these nodes can be directly added in the correct place. (If that is inconvenient, this is fine)
       labeledMassesShelf.moveToBack();
 
       const mysteryMassesShelf = new Shelf( tandem, {
