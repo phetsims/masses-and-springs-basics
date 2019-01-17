@@ -31,11 +31,11 @@ define( require => {
 
       // Equilibrium of mass is dependent on the mass being attached and the visibility of the equilibrium line.
       const firstMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.firstSpring.massAttachedProperty ],
-        function( equilibriumPositionVisible, massAttached ) {
+        ( equilibriumPositionVisible, massAttached ) => {
           return !!massAttached && equilibriumPositionVisible;
         } );
       const secondMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.secondSpring.massAttachedProperty ],
-        function( equilibriumPositionVisible, massAttached ) {
+        ( equilibriumPositionVisible, massAttached ) => {
           return !!massAttached && equilibriumPositionVisible;
         } );
 

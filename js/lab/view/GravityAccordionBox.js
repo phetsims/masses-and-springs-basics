@@ -91,7 +91,7 @@ define( require => {
       } );
 
       // Responsible for managing bodies
-      model.bodyProperty.link( function( newBody, oldBody ) {
+      model.bodyProperty.link( ( newBody, oldBody ) => {
         const body = _.find( Body.BODIES, newBody );
 
         // Set visibility of question node

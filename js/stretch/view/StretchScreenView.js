@@ -35,11 +35,11 @@ define( require => {
 
       // Equilibrium of mass is dependent on the mass being attached and the visibility of the equilibrium line.
       const firstMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.firstSpring.massAttachedProperty ],
-        function( equilibriumPositionVisible, massAttached ) {
+        ( equilibriumPositionVisible, massAttached ) => {
           return !!massAttached && equilibriumPositionVisible;
         } );
       const secondMassEquilibriumVisibilityProperty = new DerivedProperty( [ model.equilibriumPositionVisibleProperty, model.secondSpring.massAttachedProperty ],
-        function( equilibriumPositionVisible, massAttached ) {
+        ( equilibriumPositionVisible, massAttached ) => {
           return !!massAttached && equilibriumPositionVisible;
         } );
 
@@ -121,7 +121,7 @@ define( require => {
         this.visibleBoundsProperty.get(),
         new Vector2( this.visibleBoundsProperty.value.right - this.spacing, optionsPanel.bottom + this.spacing ),
         new Property( true ),
-        function() {}, // TODO: Initiating with a no-op?
+        () => {}, // TODO: Initiating with a no-op?
         tandem.createTandem( 'rulerNode' )
       );
       this.addChild( this.rulerNode );
