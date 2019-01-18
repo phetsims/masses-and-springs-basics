@@ -166,7 +166,8 @@ define( require => {
 
     /**
      * @param {number} dt
-     * REVIEW: Visibility (public presumably)?
+     *
+     * @public
      */
     step( dt ) {
       this.periodTraceNode.step( dt, this.model.playingProperty );
