@@ -85,7 +85,7 @@ define( require => {
       this.addChild( shelf );
       shelf.moveToBack();
 
-      // {ReferenceLineNode} Initializes equilibrium line for an attached mass
+      // Initializes equilibrium line for an attached mass
       const equilibriumLineNode = new ReferenceLineNode(
         this.modelViewTransform,
         model.firstSpring,
@@ -128,7 +128,7 @@ define( require => {
       this.addChild( centerOfOscillationLineNode );
 
       // REVIEW: Local variables shouldn't have visibility
-      // @public {MassValueControlPanel} Accessed in Basics version to adjust to a larger width.
+      // Accessed in Basics version to adjust to a larger width.
       const massValueControlPanel = new MassValueControlPanel(
         model.masses[ 0 ],
         this.massNodeIcon,
