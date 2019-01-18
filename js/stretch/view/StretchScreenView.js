@@ -63,12 +63,9 @@ define( require => {
       );
 
       // Setting specific colors for this screen's springs.
-      // REVIEW: This is setting the value of PaintColorProperty, which is generally meant only for it internally to do
-      // REVIEW: itself. It's effectively making e.g. springFrontColorProperty into a Property.<PaintColorProperty>,
-      // REVIEW: but it is documented as {PaintColorProperty} itself.
-      this.springFrontColorProperty.set( new PaintColorProperty( 'rgb( 162, 106, 172 )' ) );
-      this.springMiddleColorProperty.set( new PaintColorProperty( 'rgb( 100, 6, 117 )' ) );
-      this.springBackColorProperty.set( new PaintColorProperty( 'rgb( 50, 3, 58 )' ) );
+      this.springFrontColorProperty.set( new PaintColorProperty( 'rgb( 162, 106, 172 )' ).value );
+      this.springMiddleColorProperty.set( new PaintColorProperty( 'rgb( 100, 6, 117 )' ).value );
+      this.springBackColorProperty.set( new PaintColorProperty( 'rgb( 50, 3, 58 )' ).value );
 
       // Adding system controls to scene graph
       this.addChild( this.springSystemControlsNode );
