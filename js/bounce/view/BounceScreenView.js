@@ -22,7 +22,7 @@ define( require => {
 
   class BounceScreenView extends TwoSpringScreenView {
     /**
-     * @param {VectorsModel} model REVIEW: VectorsModel is a projectile-motion thing?
+     * @param {MassesAndSpringsModel} model
      * @param {Tandem} tandem
      */
     constructor( model, tandem ) {
