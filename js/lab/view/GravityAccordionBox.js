@@ -38,7 +38,6 @@ define( require => {
      * @param {Tandem} tandem
      * @param {Object} [options]
      *
-     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, listNodeParent, alignGroup, tandem, options ) {
 

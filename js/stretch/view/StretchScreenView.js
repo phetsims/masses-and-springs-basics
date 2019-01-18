@@ -26,7 +26,6 @@ define( require => {
     /**
      * @param {VectorsModel} model
      * @param {Tandem} tandem
-     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, tandem ) {
 

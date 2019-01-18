@@ -27,7 +27,6 @@ define( require => {
      * @param {Tandem} tandem
      * @param {object} options
      *
-     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( tandem, options ) {
 

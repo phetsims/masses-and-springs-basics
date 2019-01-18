@@ -35,7 +35,6 @@ define( require => {
      * @param {MassesAndSpringsModel} model
      * @param {Tandem} tandem
      * @param {Object} options
-     * @constructor - REVIEW: We aren't using @constructor annotations for ES6 code
      */
     constructor( model, tandem, options ) {
 
