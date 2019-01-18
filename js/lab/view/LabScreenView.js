@@ -85,8 +85,7 @@ define( require => {
       this.addChild( shelf );
       shelf.moveToBack();
 
-      // REVIEW: No visibility annotations on consts
-      // @public {ReferenceLineNode} Initializes equilibrium line for an attached mass
+      // {ReferenceLineNode} Initializes equilibrium line for an attached mass
       const equilibriumLineNode = new ReferenceLineNode(
         this.modelViewTransform,
         model.firstSpring,
