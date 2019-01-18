@@ -63,7 +63,7 @@ define( require => {
       gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
         font: MassesAndSpringsConstants.LABEL_FONT,
         tandem: tandem.createTandem( 'gravityNoneText' ), // REVIEW: Tandem should be for the 'Text', not a 'String'?
-                                                          // *REVIEW: review with JO and update updat
+                                                          // *REVIEW: review with JO and update
         maxWidth: MAX_WIDTH * 0.5
       } ) );
       gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.max, new Text( lotsString, {

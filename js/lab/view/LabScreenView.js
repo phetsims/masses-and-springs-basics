@@ -142,7 +142,7 @@ define( require => {
       ] );
       this.springSystemControlsNode.spacing = this.spacing * 1.2;
 
-      // @protected {PeriodTraceNode} REVIEW: If protected, is there a subtype of this referencing periodTraceNode?
+      // @private {PeriodTraceNode}
       this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
         center: this.massEquilibriumLineNode.center
       } );
@@ -165,9 +165,9 @@ define( require => {
     }
 
     /**
-     * @param {number} dt
-     *
      * @public
+     *
+     * @param {number} dt
      */
     step( dt ) {
       this.periodTraceNode.step( dt, this.model.playingProperty );
