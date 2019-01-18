@@ -127,7 +127,6 @@ define( require => {
       );
       this.addChild( centerOfOscillationLineNode );
 
-      // REVIEW: Local variables shouldn't have visibility
       // Accessed in Basics version to adjust to a larger width.
       const massValueControlPanel = new MassValueControlPanel(
         model.masses[ 0 ],
