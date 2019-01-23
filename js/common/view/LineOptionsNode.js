@@ -11,7 +11,6 @@ define( require => {
   // modules
   const AlignBox = require( 'SCENERY/nodes/AlignBox' );
   const AlignGroup = require( 'SCENERY/nodes/AlignGroup' );
-  const Color = require( 'SCENERY/util/Color' );
   const HBox = require( 'SCENERY/nodes/HBox' );
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
@@ -77,7 +76,7 @@ define( require => {
       } ), { xAlign: 'left', group: alignGroup } );
 
       // Checkbox group for line options
-      let lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
+      const lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
         node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
         property: model.naturalLengthVisibleProperty
       }, {
