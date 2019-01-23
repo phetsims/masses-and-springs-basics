@@ -52,26 +52,31 @@ define( require => {
       const blueLine = MassesAndSpringsConstants.CREATE_LINE_ICON( 'rgb( 65, 66, 232 )' );
       const redLine = MassesAndSpringsConstants.CREATE_LINE_ICON( 'rgb( 255, 0, 0 )' );
 
+      // Used for checkbox texts
       const alignGroup = new AlignGroup( { matchVertical: false } );
 
+      // Alignbox for unstretched length line Text
       const unstretchedLengthAlignBox = new AlignBox( new Text( unstretchedLengthString, {
         font: MassesAndSpringsConstants.TITLE_FONT,
         maxWidth: CONTENT_MAX_WIDTH,
         tandem: tandem.createTandem( 'unstretchedLengthString' )
       } ), { xAlign: 'left', group: alignGroup } );
 
+      // Alignbox for movable line Text
       const movableLineAlignBox = new AlignBox( new Text( movableLineString, {
         font: MassesAndSpringsConstants.TITLE_FONT,
         maxWidth: CONTENT_MAX_WIDTH,
         tandem: tandem.createTandem( 'movableLineString' )
       } ), { xAlign: 'left', group: alignGroup } );
 
+      // Alignbox for resting position line  Text
       const restingPositionAlignBox = new AlignBox( new Text( restingPositionString, {
         font: MassesAndSpringsConstants.TITLE_FONT,
         maxWidth: CONTENT_MAX_WIDTH,
         tandem: tandem.createTandem( 'restingPositionString' )
       } ), { xAlign: 'left', group: alignGroup } );
 
+      // Checkbox group for line options
       let lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
         node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
         property: model.naturalLengthVisibleProperty
@@ -89,6 +94,7 @@ define( require => {
         tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
       } );
 
+      // Checkbox group used for line options and periodTraceNode
       if ( options.enablePeriodTrace ) {
         lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
           node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
