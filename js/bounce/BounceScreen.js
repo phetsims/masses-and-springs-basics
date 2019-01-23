@@ -50,7 +50,7 @@ define( require => {
           return model;
         },
         // REVIEW: In general, do we need `tandem.createTandem( 'view' )`?
-        model => { return new BounceScreenView( model, tandem ); },
+        model => { return new BounceScreenView( model, tandem.createTandem( 'view' ) ); },
         options
       );
     }
