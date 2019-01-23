@@ -41,7 +41,7 @@ define( require => {
 
       super(
         () => new LabModel( tandem.createTandem( 'model' ), options ),
-        model => { return new LabScreenView( model, tandem ); },
+        model => { return new LabScreenView( model, tandem.createTandem( 'view' ) ); },
         options
       );
     }
