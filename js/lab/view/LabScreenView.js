@@ -16,7 +16,6 @@ define( require => {
   const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   const MassValueControlPanel = require( 'MASSES_AND_SPRINGS/common/view/MassValueControlPanel' );
-  const Node = require( 'SCENERY/nodes/Node' );
   const OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
   const PeriodTraceNode = require( 'MASSES_AND_SPRINGS/lab/view/PeriodTraceNode' );
   const ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
@@ -144,10 +143,10 @@ define( require => {
         center: this.massEquilibriumLineNode.center
       } );
 
-      // Layer used to move interactive elements to the front
-      const frontLayer = new Node( { children: [ this.movableLineNode, this.massLayer, this.toolsLayer ] } );
-      this.addChild( frontLayer );
-      frontLayer.moveToFront();
+      // Move layers with interactive elements and layers to the front
+      this.movableLineNode.moveToFront();
+      this.massLayer.moveToFront();
+      this.toolsLayer.moveToFront();
 
       // Back layer used to handle z order of view elements.
       this.addChild( this.backLayer );
