@@ -72,8 +72,6 @@ define( require => {
         children: [ optionsPanel, gravityAccordionBox, this.toolboxPanel ],
         spacing: this.spacing * 0.9
       } );
-      this.addChild( rightPanelsVBox );
-      rightPanelsVBox.moveToBack();
 
       // Shelf used for masses
       const shelf = new Shelf( tandem, {
@@ -82,8 +80,6 @@ define( require => {
         left: this.visibleBoundsProperty.value.left + this.spacing,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
-      this.addChild( shelf );
-      shelf.moveToBack();
 
       // Initializes equilibrium line for an attached mass
       const equilibriumLineNode = new ReferenceLineNode(
@@ -146,16 +142,16 @@ define( require => {
       this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
         center: this.massEquilibriumLineNode.center
       } );
-      this.addChild( this.periodTraceNode );
-      this.periodTraceNode.moveToBack();
 
       // Move layers with interactive elements to the front
       this.movableLineNode.moveToFront();
       this.massLayer.moveToFront();
       this.toolsLayer.moveToFront();
 
-      // Move this plane to the back of the scene graph
-      this.backgroundDragPlane.moveToBack();
+      // Back layer used to handle z order of view elements.
+      this.addChild( this.backLayer );
+      this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, shelf, this.periodTraceNode ];
+      this.backLayer.moveToBack();
 
       this.visibleBoundsProperty.link( () => {
         rightPanelsVBox.rightTop = new Vector2( this.panelRightSpacing, this.spacing );
