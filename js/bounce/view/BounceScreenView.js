@@ -83,15 +83,11 @@ define( require => {
         children: [ optionsPanel, this.toolboxPanel ],
         spacing: this.spacing * 0.9
       } );
-      this.addChild( rightPanelsVBox );
-      rightPanelsVBox.moveToBack();
 
       this.visibleBoundsProperty.link( () => {
         rightPanelsVBox.rightTop = new Vector2( this.panelRightSpacing, this.spacing );
       } );
 
-      // Move this plane to the back of the scene graph
-      this.backgroundDragPlane.moveToBack();
 
       // Shelves used for masses
       const labeledMassesShelf = new Shelf( tandem, {
@@ -100,10 +96,6 @@ define( require => {
         left: this.layoutBounds.left + this.spacing,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
-      this.addChild( labeledMassesShelf );
-      // REVIEW: Rather than moving things to the very back, consider having layer Nodes on the supertype, so that
-      // REVIEW: these nodes can be directly added in the correct place. (If that is inconvenient, this is fine)
-      labeledMassesShelf.moveToBack();
 
       const mysteryMassesShelf = new Shelf( tandem, {
         rectHeight: 7,
@@ -111,8 +103,11 @@ define( require => {
         left: labeledMassesShelf.right + this.spacing * 2,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
-      this.addChild( mysteryMassesShelf );
-      mysteryMassesShelf.moveToBack();
+
+      // Back layer used to handle z order of view elements.
+      this.addChild( this.backLayer );
+      this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, labeledMassesShelf, mysteryMassesShelf ];
+      this.backLayer.moveToBack();
     }
   }
 
