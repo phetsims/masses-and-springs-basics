@@ -94,26 +94,6 @@ define( require => {
         tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
       } );
 
-      // Checkbox group used for line options and periodTraceNode
-      if ( options.enablePeriodTrace ) {
-        lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
-          node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
-          property: model.naturalLengthVisibleProperty
-        }, {
-          node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
-          property: model.equilibriumPositionVisibleProperty
-        }, {
-          node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
-          property: model.movableLineVisibleProperty
-        } ], {
-          checkboxOptions: {
-            boxWidth: 16,
-            spacing: 8
-          },
-          tandem: tandem.createTandem( 'lineOptionsCheckboxGroup' )
-        } );
-      }
-
       const lineOptionsControlsVBox = new VBox( {
           children: [
             lineOptionsCheckboxGroup
