@@ -89,12 +89,6 @@ define( require => {
       // Panel that will display all the toggleable options.
       const optionsPanel = this.createOptionsPanel( lineOptionsPanel, this.rightPanelAlignGroup, tandem );
 
-      this.addChild( optionsPanel );
-      optionsPanel.moveToBack();
-
-      // Move this plane to the back of the scene graph
-      this.backgroundDragPlane.moveToBack();
-
       // Shelves used for masses
       const labeledMassesShelf = new Shelf( tandem, {
         rectHeight: 7,
@@ -102,8 +96,6 @@ define( require => {
         left: this.layoutBounds.left + this.spacing,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
-      this.addChild( labeledMassesShelf );
-      labeledMassesShelf.moveToBack();
 
       const mysteryMassesShelf = new Shelf( tandem, {
         rectHeight: 7,
@@ -111,8 +103,6 @@ define( require => {
         left: labeledMassesShelf.right + this.spacing * 2,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
-      this.addChild( mysteryMassesShelf );
-      mysteryMassesShelf.moveToBack();
 
       // @public {DraggableRulerNode}
       this.rulerNode = new DraggableRulerNode(
@@ -124,6 +114,11 @@ define( require => {
         tandem.createTandem( 'rulerNode' )
       );
       this.addChild( this.rulerNode );
+
+      // Back layer used to handle z order of view elements.
+      this.addChild( this.backLayer );
+      this.backLayer.children = [ this.backgroundDragPlane, optionsPanel, labeledMassesShelf, mysteryMassesShelf ];
+      this.backLayer.moveToBack();
 
       this.visibleBoundsProperty.link( () => {
         optionsPanel.rightTop = new Vector2( this.panelRightSpacing, this.springSystemControlsNode.top );
