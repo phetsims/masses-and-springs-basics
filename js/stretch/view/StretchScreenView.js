@@ -110,7 +110,7 @@ define( require => {
         this.visibleBoundsProperty.get(),
         new Vector2( this.visibleBoundsProperty.value.right - this.spacing, optionsPanel.bottom + this.spacing ),
         new Property( true ),
-        () => {}, // TODO: Initiating with a no-op?
+        () => {},
         tandem.createTandem( 'rulerNode' )
       );
       this.addChild( this.rulerNode );
