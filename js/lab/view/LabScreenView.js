@@ -149,9 +149,7 @@ define( require => {
       this.toolsLayer.moveToFront();
 
       // Back layer used to handle z order of view elements.
-      this.addChild( this.backLayer );
       this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, shelf, this.periodTraceNode ];
-      this.backLayer.moveToBack();
 
       this.visibleBoundsProperty.link( () => {
         rightPanelsVBox.rightTop = new Vector2( this.panelRightSpacing, this.spacing );

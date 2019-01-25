@@ -105,9 +105,7 @@ define( require => {
       } );
 
       // Back layer used to handle z order of view elements.
-      this.addChild( this.backLayer );
       this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, labeledMassesShelf, mysteryMassesShelf ];
-      this.backLayer.moveToBack();
     }
   }
 

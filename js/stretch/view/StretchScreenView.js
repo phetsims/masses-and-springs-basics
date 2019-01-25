@@ -116,9 +116,7 @@ define( require => {
       this.addChild( this.rulerNode );
 
       // Back layer used to handle z order of view elements.
-      this.addChild( this.backLayer );
       this.backLayer.children = [ this.backgroundDragPlane, optionsPanel, labeledMassesShelf, mysteryMassesShelf ];
-      this.backLayer.moveToBack();
 
       this.visibleBoundsProperty.link( () => {
         optionsPanel.rightTop = new Vector2( this.panelRightSpacing, this.springSystemControlsNode.top );
