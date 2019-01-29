@@ -129,7 +129,7 @@ define( require => {
         this.massNodeIcon,
         tandem.createTandem( 'massValueControlPanel' ), {
           maxWidth: MassesAndSpringsConstants.PANEL_MAX_WIDTH + MassesAndSpringsConstants.PANEL_MAX_WIDTH * 0.05,
-          basicsVersion: model.options.basicsVersion
+          basicsVersion: model.basicsVersion
         }
       );
 
@@ -139,7 +139,7 @@ define( require => {
       this.springSystemControlsNode.spacing = this.spacing * 1.2;
 
       // @private {PeriodTraceNode}
-      this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.options.basicsVersion, {
+      this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.basicsVersion, {
         center: this.massEquilibriumLineNode.center
       } );
 
