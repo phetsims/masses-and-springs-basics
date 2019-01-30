@@ -38,7 +38,6 @@ define( require => {
 
       // Calls common spring view
       super( model, tandem );
-
       const vectorVisibilityControlNode = new VectorVisibilityControlNode(
         model,
         tandem.createTandem( 'vectorVisibilityControlNode' ),

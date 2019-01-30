@@ -31,7 +31,6 @@ define( require => {
     constructor( tandem, options ) {
 
       options = _.extend( {
-        basicsVersion: true,
         name: screenBounceString,
         backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
         homeScreenIcon: new Image( bounceHomeScreenImage ),
@@ -45,6 +44,7 @@ define( require => {
 
           // model reference used for spring and mass creation
           const model = new MassesAndSpringsModel( modelTandem, options );
+          model.basicsVersion = true;
           model.addDefaultSprings( modelTandem );
           model.addDefaultMasses( modelTandem );
           return model;

@@ -31,7 +31,6 @@ define( require => {
     constructor( tandem, options ) {
 
       options = _.extend( {
-        basicsVersion: true,
         name: screenStretchString,
         backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
         homeScreenIcon: new Image( stretchHomeScreenImage ),
