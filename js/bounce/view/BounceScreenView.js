@@ -97,15 +97,8 @@ define( require => {
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
 
-      const mysteryMassesShelf = new ShelfNode( tandem, {
-        rectHeight: 7,
-        rectWidth: 120,
-        left: labeledMassesShelf.right + this.spacing * 2,
-        rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
-      } );
-
       // Back layer used to handle z order of view elements.
-      this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, labeledMassesShelf, mysteryMassesShelf ];
+      this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, labeledMassesShelf ];
     }
   }
 
