@@ -19,7 +19,7 @@ define( require => {
   const OneSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/OneSpringScreenView' );
   const PeriodTraceNode = require( 'MASSES_AND_SPRINGS/lab/view/PeriodTraceNode' );
   const ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
-  const Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
+  const ShelfNode = require( 'MASSES_AND_SPRINGS/common/view/ShelfNode' );
   const Text = require( 'SCENERY/nodes/Text' );
   const VBox = require( 'SCENERY/nodes/VBox' );
   const Vector2 = require( 'DOT/Vector2' );
@@ -74,7 +74,7 @@ define( require => {
       } );
 
       // Shelf used for masses
-      const shelf = new Shelf( tandem, {
+      const shelf = new ShelfNode( tandem, {
         rectHeight: 7,
         rectWidth: 200,
         left: this.visibleBoundsProperty.value.left + this.spacing,

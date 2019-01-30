@@ -15,7 +15,7 @@ define( require => {
   const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
   const ReferenceLineNode = require( 'MASSES_AND_SPRINGS/common/view/ReferenceLineNode' );
-  const Shelf = require( 'MASSES_AND_SPRINGS/common/view/Shelf' );
+  const ShelfNode = require( 'MASSES_AND_SPRINGS/common/view/ShelfNode' );
   const TwoSpringScreenView = require( 'MASSES_AND_SPRINGS/common/view/TwoSpringScreenView' );
   const VBox = require( 'SCENERY/nodes/VBox' );
   const Vector2 = require( 'DOT/Vector2' );
@@ -90,14 +90,14 @@ define( require => {
 
 
       // Shelves used for masses
-      const labeledMassesShelf = new Shelf( tandem, {
+      const labeledMassesShelf = new ShelfNode( tandem, {
         rectHeight: 7,
         rectWidth: 185,
         left: this.layoutBounds.left + this.spacing,
         rectY: this.modelViewTransform.modelToViewY( MassesAndSpringsConstants.FLOOR_Y ) - this.shelf.rectHeight
       } );
 
-      const mysteryMassesShelf = new Shelf( tandem, {
+      const mysteryMassesShelf = new ShelfNode( tandem, {
         rectHeight: 7,
         rectWidth: 120,
         left: labeledMassesShelf.right + this.spacing * 2,
