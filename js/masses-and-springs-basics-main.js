@@ -22,8 +22,6 @@ define( require => {
 
   // constants
   const tandem = Tandem.rootTandem;
-
-  // Todo: Correct credits.
   const simOptions = {
     credits: {
       leadDesign: 'Amy Rouinfar, Mike Dubson',
