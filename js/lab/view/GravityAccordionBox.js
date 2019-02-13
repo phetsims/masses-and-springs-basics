@@ -58,7 +58,8 @@ define( require => {
         trackSize: new Dimension2( 165, 0.1 ),
         thumbSize: new Dimension2( 13, 22 ),
         thumbFillEnabled: '#00C4DF',
-        thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT
+        thumbFillHighlighted: MassesAndSpringsConstants.THUMB_HIGHLIGHT,
+        thumbTouchAreaYDilation: 9
       } );
       gravitySlider.addMajorTick( MassesAndSpringsConstants.GRAVITY_RANGE.min, new Text( noneString, {
         font: MassesAndSpringsConstants.LABEL_FONT,
