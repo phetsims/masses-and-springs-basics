@@ -120,12 +120,15 @@ define( require => {
 
       this.visibleBoundsProperty.link( () => {
         optionsPanel.rightTop = new Vector2( this.panelRightSpacing, this.springSystemControlsNode.top );
-        this.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, this.spacing ) );
+        if ( !this.rulerNode.draggedProperty.value ) {
+          this.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, this.spacing ) );
+        }
       } );
 
       // Reset call here sets the ruler to its default position rather than resetting the positionProperty
       this.resetAllButton.addListener( () => {
         this.rulerNode.positionProperty.set( optionsPanel.rightBottom.plusXY( 0, this.spacing ) );
+        this.rulerNode.draggedProperty.reset();
         model.dampingProperty.set( 0.7 );
       } );
     }
