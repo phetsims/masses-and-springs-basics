@@ -147,6 +147,10 @@ define( require => {
       this.massLayer.moveToFront();
       this.toolsLayer.moveToFront();
 
+      this.resetAllButton.addListener( () => {
+        this.movableLineNode.reset();
+      } );
+
       // Back layer used to handle z order of view elements.
       this.backLayer.children = [ this.backgroundDragPlane, rightPanelsVBox, shelf, this.periodTraceNode ];
 
