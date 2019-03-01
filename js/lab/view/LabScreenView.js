@@ -59,7 +59,9 @@ define( require => {
       // Panel that will display all the toggleable options.
       const optionsPanel = this.createOptionsPanel( optionsVBox, this.rightPanelAlignGroup, tandem );
 
-      const gravityAccordionBox = new GravityAccordionBox( model,
+      const gravityAccordionBox = new GravityAccordionBox(
+        model.gravityProperty,
+        model.bodyProperty,
         this,
         this.rightPanelAlignGroup,
         tandem.createTandem( 'gravityAccordionBox' ), {
