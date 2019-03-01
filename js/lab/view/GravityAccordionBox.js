@@ -39,6 +39,7 @@ define( require => {
      * @param {Object} [options]
      *
      */
+
     constructor( model, listNodeParent, alignGroup, tandem, options ) {
 
       options = _.extend( {
@@ -46,7 +47,7 @@ define( require => {
         contentXMargin: 0,
         cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,
         minWidth: 224,
-        titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: MAX_WIDTH } ),
+        titleNode: new Text( gravityString, { font: MassesAndSpringsConstants.TITLE_FONT, maxWidth: 185 } ),
         expandedProperty: new BooleanProperty( false ),
         titleAlignX: 'left'
       }, options );
