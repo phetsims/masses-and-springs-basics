@@ -32,15 +32,15 @@ define( require => {
 
   class GravityAccordionBox extends AccordionBox {
     /**
-     * @param {MassesAndSpringsModel} model
+     * @param {Property} gravityProperty
+     * @param {Property} bodyProperty
      * @param {Node} listNodeParent
      * @param {AlignGroup} alignGroup
      * @param {Tandem} tandem
      * @param {Object} [options]
      *
      */
-
-    constructor( model, listNodeParent, alignGroup, tandem, options ) {
+    constructor( gravityProperty, bodyProperty, listNodeParent, alignGroup, tandem, options ) {
 
       options = _.extend( {
         buttonYMargin: 4,
@@ -53,7 +53,7 @@ define( require => {
       }, options );
 
       // Create gravity slider
-      const gravitySlider = new HSlider( model.gravityProperty, MassesAndSpringsConstants.GRAVITY_RANGE, {
+      const gravitySlider = new HSlider( gravityProperty, MassesAndSpringsConstants.GRAVITY_RANGE, {
         majorTickLength: 5,
         minorTickLength: 5,
         trackSize: new Dimension2( 165, 0.1 ),
@@ -81,7 +81,7 @@ define( require => {
       } );
 
       // Manages the items associated with the gravity panel in a combo box
-      const gravityComboBox = new GravityComboBox( model.bodyProperty, listNodeParent, tandem, {
+      const gravityComboBox = new GravityComboBox( bodyProperty, listNodeParent, tandem, {
         cornerRadius: 3,
         buttonYMargin: 0,
         itemYMargin: 3,
@@ -91,7 +91,7 @@ define( require => {
       } );
 
       // Responsible for managing bodies
-      model.bodyProperty.link( ( newBody, oldBody ) => {
+      bodyProperty.link( ( newBody, oldBody ) => {
         const body = _.find( Body.BODIES, newBody );
 
         // Set visibility of question node
@@ -100,17 +100,17 @@ define( require => {
 
         // If it's not custom, set it to its value
         if ( body !== Body.CUSTOM ) {
-          model.gravityProperty.set( body.gravity );
+          gravityProperty.set( body.gravity );
         }
         else {
           // If we are switching from Planet X to Custom, don't let them cheat (go back to last custom value)
           if ( oldBody === Body.PLANET_X ) {
-            model.gravityProperty.value = Body.CUSTOM.gravity;
+            gravityProperty.value = Body.CUSTOM.gravity;
           }
 
           // For non-Planet X, update our internal custom gravity
           else {
-            Body.CUSTOM.gravity = model.gravityProperty.value;
+            Body.CUSTOM.gravity = gravityProperty.value;
           }
         }
       } );
