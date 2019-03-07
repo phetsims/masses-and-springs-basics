@@ -140,7 +140,7 @@ define( require => {
       this.springSystemControlsNode.spacing = this.spacing * 1.2;
 
       // @private {PeriodTraceNode}
-      this.periodTraceNode = new PeriodTraceNode( model.periodTrace, this.modelViewTransform, model.basicsVersion, {
+      this.periodTraceNode = new PeriodTraceNode( model.firstSpring.periodTrace, this.modelViewTransform, model.basicsVersion, {
         center: this.massEquilibriumLineNode.center
       } );
 
