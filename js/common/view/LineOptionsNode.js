@@ -26,7 +26,7 @@ define( require => {
 
   // constants
   const CONTENT_MAX_WIDTH = 122;
-  const CONTENT_SPACING = 32;
+  const DEFAULT_CONTENT_SPACING = 155;
 
   class LineOptionsNode extends Node {
 
@@ -75,15 +75,18 @@ define( require => {
         tandem: tandem.createTandem( 'restingPositionString' )
       } ), { xAlign: 'left', group: alignGroup } );
 
+      // Max width must be set to the maxWidth of the alignGroup based on its content.
+      var contentSpacing = DEFAULT_CONTENT_SPACING - alignGroup.getMaxWidth();
+
       // Checkbox group for line options
       const lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
-        node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: CONTENT_SPACING } ),
+        node: new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: contentSpacing } ),
         property: model.naturalLengthVisibleProperty
       }, {
-        node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: CONTENT_SPACING } ),
+        node: new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: contentSpacing } ),
         property: model.equilibriumPositionVisibleProperty
       }, {
-        node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: CONTENT_SPACING } ),
+        node: new HBox( { children: [ movableLineAlignBox, redLine ], spacing: contentSpacing } ),
         property: model.movableLineVisibleProperty
       } ], {
         checkboxOptions: {
