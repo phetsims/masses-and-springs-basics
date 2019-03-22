@@ -27,7 +27,7 @@ define( require => {
       leadDesign: 'Amy Rouinfar, Mike Dubson',
       softwareDevelopment: 'Denzell Barnett',
       team: 'Wendy Adams, Ariel Paul, Kathy Perkins in cooperation with the Next-Lab project',
-      qualityAssurance: ''
+      qualityAssurance: 'Megan Lai, Liam Mulhall, Laura Rea, Jacob Romero, Kathryn Woessner'
     }
   };
   // Set the profile name for the ColorProfile used in this sim
