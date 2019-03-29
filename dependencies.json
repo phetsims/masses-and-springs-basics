@@ -1,5 +1,5 @@
 {
-  "comment": "# masses-and-springs-basics 1.0.0 Thu Mar 28 2019 23:12:30 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# masses-and-springs-basics 1.0.1-rc.1 Fri Mar 29 2019 14:25:11 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -10,7 +10,7 @@
   },
   "brand": {
     "sha": "933b632e53e24915127a48843b92773929ed17b9",
-    "branch": "masses-and-springs-basics-1.0"
+    "branch": "HEAD"
   },
   "chipper": {
     "sha": "390f3c769aa9b4e855580b67203dfe7e0225c087",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "a64e1fa8233efa34fd39d84b28765c1792fe2f2c",
+    "sha": "f4ef4b1778052a56219420c8e33fbfaf4a6a0165",
     "branch": "1.0"
   },
   "phet-core": {
