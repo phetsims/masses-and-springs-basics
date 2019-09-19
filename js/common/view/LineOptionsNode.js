@@ -76,7 +76,7 @@ define( require => {
       } ), { xAlign: 'left', group: alignGroup } );
 
       // Max width must be set to the maxWidth of the alignGroup based on its content.
-      var contentSpacing = DEFAULT_CONTENT_SPACING - alignGroup.getMaxWidth();
+      const contentSpacing = DEFAULT_CONTENT_SPACING - alignGroup.getMaxWidth();
 
       // Checkbox group for line options
       const lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
