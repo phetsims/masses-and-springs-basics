@@ -51,7 +51,7 @@ define( require => {
           model.dampingProperty.set( 0.7 );
           return model;
         },
-        model => { return new StretchScreenView( model, tandem.createTandem( 'view' ) ); },
+        model=> new StretchScreenView( model, tandem.createTandem( 'view' ) ),
         options
       );
     }

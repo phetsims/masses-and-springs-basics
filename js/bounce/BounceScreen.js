@@ -49,7 +49,7 @@ define( require => {
           model.addDefaultMasses( modelTandem );
           return model;
         },
-        model => { return new BounceScreenView( model, tandem.createTandem( 'view' ) ); },
+        model=> new BounceScreenView( model, tandem.createTandem( 'view' ) ),
         options
       );
     }
