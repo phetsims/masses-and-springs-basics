@@ -1,5 +1,5 @@
 {
-  "comment": "# masses-and-springs-basics 1.0.7-rc.2 Tue Sep 10 2019 11:18:45 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# masses-and-springs-basics 1.0.7 Thu Sep 19 2019 02:19:23 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "11c87605b47790eaaff8041396a2d21709132cfd",
+    "sha": "f7961123c5ad71049da0e2f0cdaf26b204a9d764",
     "branch": "1.0"
   },
   "phet-core": {
