@@ -14,6 +14,7 @@ define( require => {
   const HBox = require( 'SCENERY/nodes/HBox' );
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Text = require( 'SCENERY/nodes/Text' );
   const VBox = require( 'SCENERY/nodes/VBox' );
@@ -37,7 +38,7 @@ define( require => {
      */
     constructor( model, tandem, options ) {
 
-      options = _.extend( {
+      options = merge( {
         fill: MassesAndSpringsConstants.PANEL_FILL,
         tandem: tandem.createTandem( 'lineOptionsPanel' ),
         minWidth: MassesAndSpringsConstants.PANEL_MIN_WIDTH + 10,

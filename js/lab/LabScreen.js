@@ -14,6 +14,7 @@ define( require => {
   const LabScreenView = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/LabScreenView' );
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
 
   // strings
@@ -31,7 +32,7 @@ define( require => {
      */
     constructor( tandem, options ) {
 
-      options = _.extend( {
+      options = merge( {
         basicsVersion: true,
         name: screenLabString,
         backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,

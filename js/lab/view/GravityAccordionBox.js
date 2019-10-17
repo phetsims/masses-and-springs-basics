@@ -12,12 +12,13 @@ define( require => {
   const AccordionBox = require( 'SUN/AccordionBox' );
   const AlignBox = require( 'SCENERY/nodes/AlignBox' );
   const Body = require( 'MASSES_AND_SPRINGS/common/model/Body' );
-  const GravityComboBox = require( 'MASSES_AND_SPRINGS/common/view/GravityComboBox' );
   const BooleanProperty = require( 'AXON/BooleanProperty' );
   const Dimension2 = require( 'DOT/Dimension2' );
+  const GravityComboBox = require( 'MASSES_AND_SPRINGS/common/view/GravityComboBox' );
   const HSlider = require( 'SUN/HSlider' );
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsConstants = require( 'MASSES_AND_SPRINGS/common/MassesAndSpringsConstants' );
+  const merge = require( 'PHET_CORE/merge' );
   const Node = require( 'SCENERY/nodes/Node' );
   const Text = require( 'SCENERY/nodes/Text' );
 
@@ -42,7 +43,7 @@ define( require => {
      */
     constructor( gravityProperty, bodyProperty, listNodeParent, alignGroup, tandem, options ) {
 
-      options = _.extend( {
+      options = merge( {
         buttonYMargin: 4,
         contentXMargin: 0,
         cornerRadius: MassesAndSpringsConstants.PANEL_CORNER_RADIUS,

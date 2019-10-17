@@ -13,6 +13,7 @@ define( require => {
   const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
   const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
   const MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
+  const merge = require( 'PHET_CORE/merge' );
   const Screen = require( 'JOIST/Screen' );
   const StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
 
@@ -30,7 +31,7 @@ define( require => {
      */
     constructor( tandem, options ) {
 
-      options = _.extend( {
+      options = merge( {
         name: screenStretchString,
         backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
         homeScreenIcon: new Image( stretchHomeScreenImage ),
