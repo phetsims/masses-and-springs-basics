@@ -1,5 +1,5 @@
 {
-  "comment": "# masses-and-springs-basics 1.0.9-rc.2 Mon Oct 21 2019 11:41:04 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# masses-and-springs-basics 1.0.9-rc.2 Wed Oct 23 2019 15:56:19 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -25,8 +25,8 @@
     "branch": "HEAD"
   },
   "joist": {
-    "sha": "fb8fb5897ba8ccc62c86ca1f02f1119b4ad8ef58",
-    "branch": "HEAD"
+    "sha": "534bb1204f1cfc1eece2caeee6620aa11849d29f",
+    "branch": "masses-and-springs-basics-1.0"
   },
   "kite": {
     "sha": "20a875b740cbb9c441c72911e60617cd05a5d4e1",
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "a2a5587d902df42cab67dac5aad56c1659d4403e",
+    "sha": "74e09bc170affbdd6d08f0e13cbd64fb853cc5cd",
     "branch": "1.0"
   },
   "phet-core": {
