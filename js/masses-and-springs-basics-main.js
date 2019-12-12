@@ -21,7 +21,7 @@ define( require => {
   const massesAndSpringsBasicsTitleString = require( 'string!MASSES_AND_SPRINGS_BASICS/masses-and-springs-basics.title' );
 
   // constants
-  const tandem = Tandem.rootTandem;
+  const tandem = Tandem.ROOT;
   const simOptions = {
     credits: {
       leadDesign: 'Amy Rouinfar, Mike Dubson',
