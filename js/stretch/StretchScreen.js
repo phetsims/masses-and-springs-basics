@@ -26,7 +26,7 @@ define( require => {
   class StretchScreen extends Screen {
     /**
      * @param {Tandem} tandem
-     * @param {object} options
+     * @param {Object} [options]
      *
      */
     constructor( tandem, options ) {
