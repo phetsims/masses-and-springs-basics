@@ -5,58 +5,55 @@
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const Image = require( 'SCENERY/nodes/Image' );
-  const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
-  const MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Screen = require( 'JOIST/Screen' );
-  const StretchScreenView = require( 'MASSES_AND_SPRINGS_BASICS/stretch/view/StretchScreenView' );
+import Screen from '../../../joist/js/Screen.js';
+import MassesAndSpringsModel from '../../../masses-and-springs/js/common/model/MassesAndSpringsModel.js';
+import MassesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import merge from '../../../phet-core/js/merge.js';
+import Image from '../../../scenery/js/nodes/Image.js';
+import stretchHomeScreenImage from '../../images/stretch_screen_icon_png.js';
+import massesAndSpringsBasicsStrings from '../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
+import StretchScreenView from './view/StretchScreenView.js';
 
-  // strings
-  const screenStretchString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.stretch' );
+const screenStretchString = massesAndSpringsBasicsStrings.screen.stretch;
 
-  // image
-  const stretchHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/stretch_screen_icon.png' );
+// image
 
-  class StretchScreen extends Screen {
-    /**
-     * @param {Tandem} tandem
-     * @param {Object} [options]
-     *
-     */
-    constructor( tandem, options ) {
+class StretchScreen extends Screen {
+  /**
+   * @param {Tandem} tandem
+   * @param {Object} [options]
+   *
+   */
+  constructor( tandem, options ) {
 
-      options = merge( {
-        name: screenStretchString,
-        backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-        homeScreenIcon: new Image( stretchHomeScreenImage ),
-        tandem: tandem
-      }, options );
+    options = merge( {
+      name: screenStretchString,
+      backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
+      homeScreenIcon: new Image( stretchHomeScreenImage ),
+      tandem: tandem
+    }, options );
 
-      super( () => {
+    super( () => {
 
-          // Reference for model tandem
-          const modelTandem = tandem.createTandem( 'model' );
+        // Reference for model tandem
+        const modelTandem = tandem.createTandem( 'model' );
 
-          // Reference for model used in spring and mass creation
-          const model = new MassesAndSpringsModel( modelTandem, options );
-          model.addDefaultSprings( modelTandem );
-          model.addDefaultMasses( modelTandem );
+        // Reference for model used in spring and mass creation
+        const model = new MassesAndSpringsModel( modelTandem, options );
+        model.addDefaultSprings( modelTandem );
+        model.addDefaultMasses( modelTandem );
 
-          // It is intended that the stretch screen have a specific damping
-          model.dampingProperty.set( 0.7 );
-          return model;
-        },
-        model=> new StretchScreenView( model, tandem.createTandem( 'view' ) ),
-        options
-      );
-    }
+        // It is intended that the stretch screen have a specific damping
+        model.dampingProperty.set( 0.7 );
+        return model;
+      },
+      model => new StretchScreenView( model, tandem.createTandem( 'view' ) ),
+      options
+    );
   }
+}
 
-  return massesAndSpringsBasics.register( 'StretchScreen', StretchScreen );
-} );
+massesAndSpringsBasics.register( 'StretchScreen', StretchScreen );
+export default StretchScreen;

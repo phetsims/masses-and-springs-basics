@@ -5,56 +5,52 @@
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BounceScreenView = require( 'MASSES_AND_SPRINGS_BASICS/bounce/view/BounceScreenView' );
-  const Image = require( 'SCENERY/nodes/Image' );
-  const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
-  const MassesAndSpringsModel = require( 'MASSES_AND_SPRINGS/common/model/MassesAndSpringsModel' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Screen = require( 'JOIST/Screen' );
+import Screen from '../../../joist/js/Screen.js';
+import MassesAndSpringsModel from '../../../masses-and-springs/js/common/model/MassesAndSpringsModel.js';
+import MassesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import merge from '../../../phet-core/js/merge.js';
+import Image from '../../../scenery/js/nodes/Image.js';
+import bounceHomeScreenImage from '../../images/bounce_screen_icon_png.js';
+import massesAndSpringsBasicsStrings from '../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
+import BounceScreenView from './view/BounceScreenView.js';
 
-  // strings
-  const screenBounceString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.bounce' );
+const screenBounceString = massesAndSpringsBasicsStrings.screen.bounce;
 
-  // images
-  const bounceHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/bounce_screen_icon.png' );
 
-  class BounceScreen extends Screen {
+class BounceScreen extends Screen {
 
-    /**
-     * @param {Tandem} tandem
-     * @param {Object} [options]
-     */
-    constructor( tandem, options ) {
+  /**
+   * @param {Tandem} tandem
+   * @param {Object} [options]
+   */
+  constructor( tandem, options ) {
 
-      options = merge( {
-        name: screenBounceString,
-        backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-        homeScreenIcon: new Image( bounceHomeScreenImage ),
-        tandem: tandem
-      }, options );
+    options = merge( {
+      name: screenBounceString,
+      backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
+      homeScreenIcon: new Image( bounceHomeScreenImage ),
+      tandem: tandem
+    }, options );
 
-      super( () => {
+    super( () => {
 
-          //tandem reference for model
-          const modelTandem = tandem.createTandem( 'model' );
+        //tandem reference for model
+        const modelTandem = tandem.createTandem( 'model' );
 
-          // model reference used for spring and mass creation
-          const model = new MassesAndSpringsModel( modelTandem, options );
-          model.basicsVersion = true;
-          model.addDefaultSprings( modelTandem );
-          model.addDefaultMasses( modelTandem );
-          return model;
-        },
-        model=> new BounceScreenView( model, tandem.createTandem( 'view' ) ),
-        options
-      );
-    }
+        // model reference used for spring and mass creation
+        const model = new MassesAndSpringsModel( modelTandem, options );
+        model.basicsVersion = true;
+        model.addDefaultSprings( modelTandem );
+        model.addDefaultMasses( modelTandem );
+        return model;
+      },
+      model => new BounceScreenView( model, tandem.createTandem( 'view' ) ),
+      options
+    );
   }
+}
 
-  return massesAndSpringsBasics.register( 'BounceScreen', BounceScreen );
-} );
+massesAndSpringsBasics.register( 'BounceScreen', BounceScreen );
+export default BounceScreen;

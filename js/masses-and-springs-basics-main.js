@@ -5,40 +5,36 @@
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const BounceScreen = require( 'MASSES_AND_SPRINGS_BASICS/bounce/BounceScreen' );
-  const LabScreen = require( 'MASSES_AND_SPRINGS_BASICS/lab/LabScreen' );
-  const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
-  const Sim = require( 'JOIST/Sim' );
-  const SimLauncher = require( 'JOIST/SimLauncher' );
-  const StretchScreen = require( 'MASSES_AND_SPRINGS_BASICS/stretch/StretchScreen' );
-  const Tandem = require( 'TANDEM/Tandem' );
+import Sim from '../../joist/js/Sim.js';
+import SimLauncher from '../../joist/js/SimLauncher.js';
+import MassesAndSpringsColorProfile from '../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import Tandem from '../../tandem/js/Tandem.js';
+import BounceScreen from './bounce/BounceScreen.js';
+import LabScreen from './lab/LabScreen.js';
+import massesAndSpringsBasicsStrings from './masses-and-springs-basics-strings.js';
+import StretchScreen from './stretch/StretchScreen.js';
 
-  // strings
-  const massesAndSpringsBasicsTitleString = require( 'string!MASSES_AND_SPRINGS_BASICS/masses-and-springs-basics.title' );
+const massesAndSpringsBasicsTitleString = massesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].title;
 
-  // constants
-  const tandem = Tandem.ROOT;
-  const simOptions = {
-    credits: {
-      leadDesign: 'Amy Rouinfar, Mike Dubson',
-      softwareDevelopment: 'Denzell Barnett',
-      team: 'Wendy Adams, Ariel Paul, Kathy Perkins in cooperation with the Next-Lab project',
-      qualityAssurance: 'Megan Lai, Liam Mulhall, Laura Rea, Jacob Romero, Kathryn Woessner'
-    }
-  };
-  // Set the profile name for the ColorProfile used in this sim
-  MassesAndSpringsColorProfile.profileNameProperty.set( 'basics' );
+// constants
+const tandem = Tandem.ROOT;
+const simOptions = {
+  credits: {
+    leadDesign: 'Amy Rouinfar, Mike Dubson',
+    softwareDevelopment: 'Denzell Barnett',
+    team: 'Wendy Adams, Ariel Paul, Kathy Perkins in cooperation with the Next-Lab project',
+    qualityAssurance: 'Megan Lai, Liam Mulhall, Laura Rea, Jacob Romero, Kathryn Woessner'
+  }
+};
+// Set the profile name for the ColorProfile used in this sim
+MassesAndSpringsColorProfile.profileNameProperty.set( 'basics' );
 
-  SimLauncher.launch( () => {
-    const sim = new Sim( massesAndSpringsBasicsTitleString, [
-      new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
-      new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
-      new LabScreen( tandem.createTandem( 'labScreen' ) )
-    ], simOptions );
-    sim.start();
-  } );
+SimLauncher.launch( () => {
+  const sim = new Sim( massesAndSpringsBasicsTitleString, [
+    new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
+    new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
+    new LabScreen( tandem.createTandem( 'labScreen' ) )
+  ], simOptions );
+  sim.start();
 } );

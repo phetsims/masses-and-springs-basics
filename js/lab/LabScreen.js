@@ -5,48 +5,45 @@
  *
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
-define( require => {
-  'use strict';
 
-  // modules
-  const Image = require( 'SCENERY/nodes/Image' );
-  const LabModel = require( 'MASSES_AND_SPRINGS/lab/model/LabModel' );
-  const LabScreenView = require( 'MASSES_AND_SPRINGS_BASICS/lab/view/LabScreenView' );
-  const massesAndSpringsBasics = require( 'MASSES_AND_SPRINGS_BASICS/massesAndSpringsBasics' );
-  const MassesAndSpringsColorProfile = require( 'MASSES_AND_SPRINGS/common/view/MassesAndSpringsColorProfile' );
-  const merge = require( 'PHET_CORE/merge' );
-  const Screen = require( 'JOIST/Screen' );
+import Screen from '../../../joist/js/Screen.js';
+import MassesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
+import merge from '../../../phet-core/js/merge.js';
+import Image from '../../../scenery/js/nodes/Image.js';
+import labHomeScreenImage from '../../images/lab_screen_icon_png.js';
+import massesAndSpringsBasicsStrings from '../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
+import LabScreenView from './view/LabScreenView.js';
 
-  // strings
-  const screenLabString = require( 'string!MASSES_AND_SPRINGS_BASICS/screen.lab' );
+const screenLabString = massesAndSpringsBasicsStrings.screen.lab;
 
-  // image
-  const labHomeScreenImage = require( 'image!MASSES_AND_SPRINGS_BASICS/lab_screen_icon.png' );
+// image
 
-  class LabScreen extends Screen {
+class LabScreen extends Screen {
 
-    /**
-     * @param {Tandem} tandem
-     * @param {Object} [options]
-     *
-     */
-    constructor( tandem, options ) {
+  /**
+   * @param {Tandem} tandem
+   * @param {Object} [options]
+   *
+   */
+  constructor( tandem, options ) {
 
-      options = merge( {
-        basicsVersion: true,
-        name: screenLabString,
-        backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-        homeScreenIcon: new Image( labHomeScreenImage ),
-        tandem: tandem
-      }, options );
+    options = merge( {
+      basicsVersion: true,
+      name: screenLabString,
+      backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
+      homeScreenIcon: new Image( labHomeScreenImage ),
+      tandem: tandem
+    }, options );
 
-      super(
-        () => new LabModel( tandem.createTandem( 'model' ), true, options ),
-        model=> new LabScreenView( model, tandem.createTandem( 'view' ) ),
-        options
-      );
-    }
+    super(
+      () => new LabModel( tandem.createTandem( 'model' ), true, options ),
+      model => new LabScreenView( model, tandem.createTandem( 'view' ) ),
+      options
+    );
   }
+}
 
-  return massesAndSpringsBasics.register( 'LabScreen', LabScreen );
-} );
+massesAndSpringsBasics.register( 'LabScreen', LabScreen );
+export default LabScreen;
