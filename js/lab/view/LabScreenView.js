@@ -20,7 +20,7 @@ import VectorVisibilityControlNode from '../../../../masses-and-springs/js/vecto
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
-import massesAndSpringsBasicsStrings from '../../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 import GravityAccordionBox from './GravityAccordionBox.js';
 

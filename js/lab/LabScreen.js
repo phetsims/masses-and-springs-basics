@@ -12,7 +12,7 @@ import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import labHomeScreenImage from '../../images/lab_screen_icon_png.js';
-import massesAndSpringsBasicsStrings from '../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import LabScreenView from './view/LabScreenView.js';
 

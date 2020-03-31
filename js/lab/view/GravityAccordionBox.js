@@ -11,7 +11,7 @@ import Dimension2 from '../../../../dot/js/Dimension2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
 import Body from '../../../../masses-and-springs/js/common/model/Body.js';
 import GravityComboBox from '../../../../masses-and-springs/js/common/view/GravityComboBox.js';
-import massesAndSpringsStrings from '../../../../masses-and-springs/js/masses-and-springs-strings.js';
+import massesAndSpringsStrings from '../../../../masses-and-springs/js/massesAndSpringsStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
 import AlignBox from '../../../../scenery/js/nodes/AlignBox.js';
 import Node from '../../../../scenery/js/nodes/Node.js';

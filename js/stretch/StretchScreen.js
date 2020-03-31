@@ -12,7 +12,7 @@ import MassesAndSpringsColorProfile from '../../../masses-and-springs/js/common/
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import stretchHomeScreenImage from '../../images/stretch_screen_icon_png.js';
-import massesAndSpringsBasicsStrings from '../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import StretchScreenView from './view/StretchScreenView.js';
 

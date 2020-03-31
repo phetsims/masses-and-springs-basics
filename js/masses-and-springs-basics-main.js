@@ -12,7 +12,7 @@ import MassesAndSpringsColorProfile from '../../masses-and-springs/js/common/vie
 import Tandem from '../../tandem/js/Tandem.js';
 import BounceScreen from './bounce/BounceScreen.js';
 import LabScreen from './lab/LabScreen.js';
-import massesAndSpringsBasicsStrings from './masses-and-springs-basics-strings.js';
+import massesAndSpringsBasicsStrings from './massesAndSpringsBasicsStrings.js';
 import StretchScreen from './stretch/StretchScreen.js';
 
 const massesAndSpringsBasicsTitleString = massesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].title;

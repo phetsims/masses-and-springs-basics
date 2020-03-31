@@ -7,7 +7,7 @@
  */
 
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import massesAndSpringsStrings from '../../../../masses-and-springs/js/masses-and-springs-strings.js';
+import massesAndSpringsStrings from '../../../../masses-and-springs/js/massesAndSpringsStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
 import AlignBox from '../../../../scenery/js/nodes/AlignBox.js';
 import AlignGroup from '../../../../scenery/js/nodes/AlignGroup.js';
@@ -16,7 +16,7 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import VerticalCheckboxGroup from '../../../../sun/js/VerticalCheckboxGroup.js';
-import massesAndSpringsBasicsStrings from '../../masses-and-springs-basics-strings.js';
+import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 
 const movableLineString = massesAndSpringsStrings.movableLine;
