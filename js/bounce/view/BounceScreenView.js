@@ -9,8 +9,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import MassesAndSpringsColorProfile
-  from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import MassesAndSpringsColorProfile from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
 import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.js';
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';

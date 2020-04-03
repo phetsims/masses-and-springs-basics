@@ -11,8 +11,7 @@ import Property from '../../../../axon/js/Property.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
 import DraggableRulerNode from '../../../../masses-and-springs/js/common/view/DraggableRulerNode.js';
-import MassesAndSpringsColorProfile
-  from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import MassesAndSpringsColorProfile from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
 import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.js';
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';

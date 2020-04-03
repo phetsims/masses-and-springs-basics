@@ -9,8 +9,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import MassesAndSpringsColorProfile
-  from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import MassesAndSpringsColorProfile from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
 import MassValueControlPanel from '../../../../masses-and-springs/js/common/view/MassValueControlPanel.js';
 import OneSpringScreenView from '../../../../masses-and-springs/js/common/view/OneSpringScreenView.js';
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
@@ -20,8 +19,8 @@ import VectorVisibilityControlNode from '../../../../masses-and-springs/js/vecto
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VBox from '../../../../scenery/js/nodes/VBox.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
-import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
+import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 import GravityAccordionBox from './GravityAccordionBox.js';
 
 const centerOfOscillationString = massesAndSpringsBasicsStrings.centerOfOscillation;
