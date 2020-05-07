@@ -7,7 +7,7 @@
  */
 
 import Sim from '../../joist/js/Sim.js';
-import SimLauncher from '../../joist/js/SimLauncher.js';
+import simLauncher from '../../joist/js/simLauncher.js';
 import MassesAndSpringsColorProfile from '../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import BounceScreen from './bounce/BounceScreen.js';
@@ -30,7 +30,7 @@ const simOptions = {
 // Set the profile name for the ColorProfile used in this sim
 MassesAndSpringsColorProfile.profileNameProperty.set( 'basics' );
 
-SimLauncher.launch( () => {
+simLauncher.launch( () => {
   const sim = new Sim( massesAndSpringsBasicsTitleString, [
     new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
     new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
