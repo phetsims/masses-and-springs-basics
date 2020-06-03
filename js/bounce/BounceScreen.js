@@ -15,9 +15,9 @@ import bounceHomeScreenImage from '../../images/bounce_screen_icon_png.js';
 import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import BounceScreenView from './view/BounceScreenView.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 
 const screenBounceString = massesAndSpringsBasicsStrings.screen.bounce;
-
 
 class BounceScreen extends Screen {
 
@@ -30,7 +30,10 @@ class BounceScreen extends Screen {
     options = merge( {
       name: screenBounceString,
       backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-      homeScreenIcon: new Image( bounceHomeScreenImage ),
+      homeScreenIcon: new ScreenIcon( new Image( bounceHomeScreenImage ), {
+        maxIconWidthProportion: 1,
+        maxIconHeightProportion: 1
+      } ),
       tandem: tandem
     }, options );
 
