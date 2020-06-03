@@ -15,6 +15,7 @@ import labHomeScreenImage from '../../images/lab_screen_icon_png.js';
 import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import LabScreenView from './view/LabScreenView.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 
 const screenLabString = massesAndSpringsBasicsStrings.screen.lab;
 
@@ -33,7 +34,10 @@ class LabScreen extends Screen {
       basicsVersion: true,
       name: screenLabString,
       backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-      homeScreenIcon: new Image( labHomeScreenImage ),
+      homeScreenIcon: new ScreenIcon( new Image( labHomeScreenImage ), {
+        maxIconWidthProportion: 1,
+        maxIconHeightProportion: 1
+      } ),
       tandem: tandem
     }, options );
 

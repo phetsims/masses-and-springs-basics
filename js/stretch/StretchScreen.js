@@ -15,11 +15,11 @@ import stretchHomeScreenImage from '../../images/stretch_screen_icon_png.js';
 import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import StretchScreenView from './view/StretchScreenView.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 
 const screenStretchString = massesAndSpringsBasicsStrings.screen.stretch;
 
 // image
-
 class StretchScreen extends Screen {
   /**
    * @param {Tandem} tandem
@@ -31,7 +31,10 @@ class StretchScreen extends Screen {
     options = merge( {
       name: screenStretchString,
       backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
-      homeScreenIcon: new Image( stretchHomeScreenImage ),
+      homeScreenIcon: new ScreenIcon( new Image( stretchHomeScreenImage ), {
+        maxIconWidthProportion: 1,
+        maxIconHeightProportion: 1
+      } ),
       tandem: tandem
     }, options );
 
