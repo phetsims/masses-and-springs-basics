@@ -25,7 +25,7 @@
     "branch": "HEAD"
   },
   "joist": {
-    "sha": "534bb1204f1cfc1eece2caeee6620aa11849d29f",
+    "sha": "7d2c97d34a6a1b06b42cb81795174dd04cdba60e",
     "branch": "HEAD"
   },
   "kite": {
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "bf6ad4a210daba31c4e4acf32b8605f37ded8147",
+    "sha": "27aa9d566b157e9dc989c4731229ce2f8400a962",
     "branch": "1.0"
   },
   "phet-core": {
