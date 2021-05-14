@@ -1,5 +1,5 @@
 {
-  "comment": "# masses-and-springs-basics 1.0.10-rc.1 Mon May 10 2021 15:49:22 GMT-0600 (Mountain Daylight Time)",
+  "comment": "# masses-and-springs-basics 1.0.10-rc.2 Fri May 14 2021 06:17:20 GMT-0600 (Mountain Daylight Time)",
   "assert": {
     "sha": "d8a2e8992420327ff72a6fc4bb93ec76549ded0e",
     "branch": "HEAD"
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "1e91c18eab476ca2b6074287680bbcda2025c088",
+    "sha": "081b423d113de628c024d0e4de0739ec9834cc14",
     "branch": "1.0"
   },
   "phet-core": {
@@ -66,7 +66,7 @@
   },
   "scenery": {
     "sha": "c128ee0621c0d577c8489fe40481ccf361407059",
-    "branch": "masses-and-springs-basics-1.0"
+    "branch": "HEAD"
   },
   "scenery-phet": {
     "sha": "d08c7a4bdef28e8cfc9074637eab9bdcc7e06622",
