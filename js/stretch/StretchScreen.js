@@ -8,7 +8,7 @@
 
 import Screen from '../../../joist/js/Screen.js';
 import MassesAndSpringsModel from '../../../masses-and-springs/js/common/model/MassesAndSpringsModel.js';
-import MassesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/MassesAndSpringsColorProfile.js';
+import massesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/massesAndSpringsColorProfile.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import stretchHomeScreenImage from '../../images/stretch_screen_icon_png.js';
@@ -30,7 +30,7 @@ class StretchScreen extends Screen {
 
     options = merge( {
       name: screenStretchString,
-      backgroundColorProperty: MassesAndSpringsColorProfile.backgroundProperty,
+      backgroundColorProperty: massesAndSpringsColorProfile.backgroundProperty,
       homeScreenIcon: new ScreenIcon( new Image( stretchHomeScreenImage ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1
