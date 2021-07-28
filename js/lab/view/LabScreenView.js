@@ -9,7 +9,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import massesAndSpringsColorProfile from '../../../../masses-and-springs/js/common/view/massesAndSpringsColorProfile.js';
+import MassesAndSpringsColors from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import MassValueControlPanel from '../../../../masses-and-springs/js/common/view/MassValueControlPanel.js';
 import OneSpringScreenView from '../../../../masses-and-springs/js/common/view/OneSpringScreenView.js';
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
@@ -85,7 +85,7 @@ class LabScreenView extends OneSpringScreenView {
       model.firstSpring,
       model.firstSpring.equilibriumYPositionProperty,
       this.equilibriumVisibilityProperty, {
-        stroke: massesAndSpringsColorProfile.restingPositionProperty
+        stroke: MassesAndSpringsColors.restingPositionProperty
       }
     );
     this.addChild( equilibriumLineNode );

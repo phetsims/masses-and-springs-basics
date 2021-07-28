@@ -9,7 +9,7 @@
 import DerivedProperty from '../../../../axon/js/DerivedProperty.js';
 import Vector2 from '../../../../dot/js/Vector2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import massesAndSpringsColorProfile from '../../../../masses-and-springs/js/common/view/massesAndSpringsColorProfile.js';
+import MassesAndSpringsColors from '../../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
 import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.js';
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';
@@ -42,7 +42,7 @@ class BounceScreenView extends TwoSpringScreenView {
       model.firstSpring,
       model.firstSpring.equilibriumYPositionProperty,
       firstMassEquilibriumVisibilityProperty, {
-        stroke: massesAndSpringsColorProfile.restingPositionProperty
+        stroke: MassesAndSpringsColors.restingPositionProperty
       }
     );
 
@@ -52,7 +52,7 @@ class BounceScreenView extends TwoSpringScreenView {
       model.secondSpring,
       model.secondSpring.equilibriumYPositionProperty,
       secondMassEquilibriumVisibilityProperty, {
-        stroke: massesAndSpringsColorProfile.restingPositionProperty
+        stroke: MassesAndSpringsColors.restingPositionProperty
       }
     );
 

@@ -7,7 +7,7 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
-import massesAndSpringsColorProfile from '../../../masses-and-springs/js/common/view/massesAndSpringsColorProfile.js';
+import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
@@ -33,7 +33,7 @@ class LabScreen extends Screen {
     options = merge( {
       basicsVersion: true,
       name: screenLabString,
-      backgroundColorProperty: massesAndSpringsColorProfile.backgroundProperty,
+      backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
       homeScreenIcon: new ScreenIcon( new Image( labHomeScreenImage ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1
