@@ -13,7 +13,7 @@ import MassesAndSpringsColors from '../../../../masses-and-springs/js/common/vie
 import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/ReferenceLineNode.js';
 import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.js';
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';
-import VBox from '../../../../scenery/js/nodes/VBox.js';
+import { VBox } from '../../../../scenery/js/imports.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 

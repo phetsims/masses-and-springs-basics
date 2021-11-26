@@ -16,8 +16,8 @@ import ReferenceLineNode from '../../../../masses-and-springs/js/common/view/Ref
 import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.js';
 import PeriodTraceNode from '../../../../masses-and-springs/js/lab/view/PeriodTraceNode.js';
 import VectorVisibilityControlNode from '../../../../masses-and-springs/js/vectors/view/VectorVisibilityControlNode.js';
-import Text from '../../../../scenery/js/nodes/Text.js';
-import VBox from '../../../../scenery/js/nodes/VBox.js';
+import { Text } from '../../../../scenery/js/imports.js';
+import { VBox } from '../../../../scenery/js/imports.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
