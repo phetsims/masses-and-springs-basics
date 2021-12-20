@@ -11,7 +11,7 @@ import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/M
 import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
-import labHomeScreenImage from '../../images/lab_screen_icon_png.js';
+import labScreenIcon_png from '../../images/labScreenIcon_png.js';
 import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import LabScreenView from './view/LabScreenView.js';
@@ -34,7 +34,7 @@ class LabScreen extends Screen {
       basicsVersion: true,
       name: screenLabString,
       backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
-      homeScreenIcon: new ScreenIcon( new Image( labHomeScreenImage ), {
+      homeScreenIcon: new ScreenIcon( new Image( labScreenIcon_png ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1
       } ),

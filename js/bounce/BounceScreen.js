@@ -11,7 +11,7 @@ import MassesAndSpringsModel from '../../../masses-and-springs/js/common/model/M
 import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
-import bounceHomeScreenImage from '../../images/bounce_screen_icon_png.js';
+import bounceScreenIcon_png from '../../images/bounceScreenIcon_png.js';
 import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import BounceScreenView from './view/BounceScreenView.js';
@@ -30,7 +30,7 @@ class BounceScreen extends Screen {
     options = merge( {
       name: screenBounceString,
       backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
-      homeScreenIcon: new ScreenIcon( new Image( bounceHomeScreenImage ), {
+      homeScreenIcon: new ScreenIcon( new Image( bounceScreenIcon_png ), {
         maxIconWidthProportion: 1,
         maxIconHeightProportion: 1
       } ),
