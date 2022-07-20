@@ -7,15 +7,15 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import MassesAndSpringsModel from '../../../masses-and-springs/js/common/model/MassesAndSpringsModel.js';
 import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import bounceScreenIcon_png from '../../images/bounceScreenIcon_png.js';
-import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
+import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import BounceScreenView from './view/BounceScreenView.js';
-import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 
 const screenBounceString = massesAndSpringsBasicsStrings.screen.bounce;
 

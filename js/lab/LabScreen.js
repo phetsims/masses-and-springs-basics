@@ -7,15 +7,15 @@
  */
 
 import Screen from '../../../joist/js/Screen.js';
+import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/MassesAndSpringsColors.js';
 import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
 import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import labScreenIcon_png from '../../images/labScreenIcon_png.js';
-import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
+import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
 import LabScreenView from './view/LabScreenView.js';
-import ScreenIcon from '../../../joist/js/ScreenIcon.js';
 
 const screenLabString = massesAndSpringsBasicsStrings.screen.lab;
 

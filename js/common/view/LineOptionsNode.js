@@ -9,15 +9,10 @@
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
 import massesAndSpringsStrings from '../../../../masses-and-springs/js/massesAndSpringsStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
-import { AlignBox } from '../../../../scenery/js/imports.js';
-import { AlignGroup } from '../../../../scenery/js/imports.js';
-import { HBox } from '../../../../scenery/js/imports.js';
-import { Node } from '../../../../scenery/js/imports.js';
-import { Text } from '../../../../scenery/js/imports.js';
-import { VBox } from '../../../../scenery/js/imports.js';
+import { AlignBox, AlignGroup, HBox, Node, Text, VBox } from '../../../../scenery/js/imports.js';
 import VerticalCheckboxGroup from '../../../../sun/js/VerticalCheckboxGroup.js';
-import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
+import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
 
 const movableLineString = massesAndSpringsStrings.movableLine;
 const restingPositionString = massesAndSpringsBasicsStrings.restingPosition;
