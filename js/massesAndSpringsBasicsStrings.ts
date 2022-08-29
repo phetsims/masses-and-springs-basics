@@ -10,23 +10,23 @@ import massesAndSpringsBasics from './massesAndSpringsBasics.js';
 
 type StringsType = {
   'centerOfOscillation': string;
-  'centerOfOscillationProperty': TReadOnlyProperty<string>;
+  'centerOfOscillationStringProperty': TReadOnlyProperty<string>;
   'masses-and-springs-basics': {
     'title': string;
-    'titleProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': TReadOnlyProperty<string>;
   };
   'screen': {
     'stretch': string;
-    'stretchProperty': TReadOnlyProperty<string>;
+    'stretchStringProperty': TReadOnlyProperty<string>;
     'bounce': string;
-    'bounceProperty': TReadOnlyProperty<string>;
+    'bounceStringProperty': TReadOnlyProperty<string>;
     'lab': string;
-    'labProperty': TReadOnlyProperty<string>;
+    'labStringProperty': TReadOnlyProperty<string>;
   };
   'restingPosition': string;
-  'restingPositionProperty': TReadOnlyProperty<string>;
+  'restingPositionStringProperty': TReadOnlyProperty<string>;
   'unstretchedLength': string;
-  'unstretchedLengthProperty': TReadOnlyProperty<string>;
+  'unstretchedLengthStringProperty': TReadOnlyProperty<string>;
 };
 
 const massesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
