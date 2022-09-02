@@ -14,7 +14,7 @@ import LabScreen from './lab/LabScreen.js';
 import massesAndSpringsBasicsStrings from './massesAndSpringsBasicsStrings.js';
 import StretchScreen from './stretch/StretchScreen.js';
 
-const massesAndSpringsBasicsTitleString = massesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].title;
+const massesAndSpringsBasicsTitleStringProperty = massesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].titleStringProperty;
 
 // constants
 const tandem = Tandem.ROOT;
@@ -28,7 +28,7 @@ const simOptions = {
 };
 
 simLauncher.launch( () => {
-  const sim = new Sim( massesAndSpringsBasicsTitleString, [
+  const sim = new Sim( massesAndSpringsBasicsTitleStringProperty, [
     new StretchScreen( tandem.createTandem( 'stretchScreen' ) ),
     new BounceScreen( tandem.createTandem( 'bounceScreen' ) ),
     new LabScreen( tandem.createTandem( 'labScreen' ) )
