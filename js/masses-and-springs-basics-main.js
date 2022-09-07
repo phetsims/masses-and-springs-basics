@@ -11,10 +11,10 @@ import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
 import BounceScreen from './bounce/BounceScreen.js';
 import LabScreen from './lab/LabScreen.js';
-import massesAndSpringsBasicsStrings from './massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from './MassesAndSpringsBasicsStrings.js';
 import StretchScreen from './stretch/StretchScreen.js';
 
-const massesAndSpringsBasicsTitleStringProperty = massesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].titleStringProperty;
+const massesAndSpringsBasicsTitleStringProperty = MassesAndSpringsBasicsStrings[ 'masses-and-springs-basics' ].titleStringProperty;
 
 // constants
 const tandem = Tandem.ROOT;

@@ -11,17 +11,17 @@ import Dimension2 from '../../../../dot/js/Dimension2.js';
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
 import Body from '../../../../masses-and-springs/js/common/model/Body.js';
 import GravityComboBox from '../../../../masses-and-springs/js/common/view/GravityComboBox.js';
-import massesAndSpringsStrings from '../../../../masses-and-springs/js/massesAndSpringsStrings.js';
+import MassesAndSpringsStrings from '../../../../masses-and-springs/js/MassesAndSpringsStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
 import { AlignBox, Node, Text } from '../../../../scenery/js/imports.js';
 import AccordionBox from '../../../../sun/js/AccordionBox.js';
 import HSlider from '../../../../sun/js/HSlider.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 
-const gravityString = massesAndSpringsStrings.gravity;
-const lotsString = massesAndSpringsStrings.lots;
-const noneString = massesAndSpringsStrings.none;
-const whatIsTheValueOfGravityString = massesAndSpringsStrings.whatIsTheValueOfGravity;
+const gravityString = MassesAndSpringsStrings.gravity;
+const lotsString = MassesAndSpringsStrings.lots;
+const noneString = MassesAndSpringsStrings.none;
+const whatIsTheValueOfGravityString = MassesAndSpringsStrings.whatIsTheValueOfGravity;
 
 // constants
 const MAX_WIDTH = 100;

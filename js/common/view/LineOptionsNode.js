@@ -7,16 +7,16 @@
  */
 
 import MassesAndSpringsConstants from '../../../../masses-and-springs/js/common/MassesAndSpringsConstants.js';
-import massesAndSpringsStrings from '../../../../masses-and-springs/js/massesAndSpringsStrings.js';
+import MassesAndSpringsStrings from '../../../../masses-and-springs/js/MassesAndSpringsStrings.js';
 import merge from '../../../../phet-core/js/merge.js';
 import { AlignBox, AlignGroup, HBox, Node, Text, VBox } from '../../../../scenery/js/imports.js';
 import VerticalCheckboxGroup from '../../../../sun/js/VerticalCheckboxGroup.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
-import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from '../../MassesAndSpringsBasicsStrings.js';
 
-const movableLineString = massesAndSpringsStrings.movableLine;
-const restingPositionString = massesAndSpringsBasicsStrings.restingPosition;
-const unstretchedLengthString = massesAndSpringsBasicsStrings.unstretchedLength;
+const movableLineString = MassesAndSpringsStrings.movableLine;
+const restingPositionString = MassesAndSpringsBasicsStrings.restingPosition;
+const unstretchedLengthString = MassesAndSpringsBasicsStrings.unstretchedLength;
 
 // constants
 const CONTENT_MAX_WIDTH = 122;

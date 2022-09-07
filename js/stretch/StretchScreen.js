@@ -14,10 +14,10 @@ import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import stretchScreenIcon_png from '../../images/stretchScreenIcon_png.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
-import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import StretchScreenView from './view/StretchScreenView.js';
 
-const screenStretchString = massesAndSpringsBasicsStrings.screen.stretch;
+const screenStretchString = MassesAndSpringsBasicsStrings.screen.stretch;
 
 // image
 class StretchScreen extends Screen {

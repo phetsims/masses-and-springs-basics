@@ -14,10 +14,10 @@ import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import labScreenIcon_png from '../../images/labScreenIcon_png.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
-import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import LabScreenView from './view/LabScreenView.js';
 
-const screenLabString = massesAndSpringsBasicsStrings.screen.lab;
+const screenLabString = MassesAndSpringsBasicsStrings.screen.lab;
 
 // image
 

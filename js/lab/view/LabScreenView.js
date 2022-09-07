@@ -19,10 +19,10 @@ import VectorVisibilityControlNode from '../../../../masses-and-springs/js/vecto
 import { Text, VBox } from '../../../../scenery/js/imports.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
 import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
-import massesAndSpringsBasicsStrings from '../../massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from '../../MassesAndSpringsBasicsStrings.js';
 import GravityAccordionBox from './GravityAccordionBox.js';
 
-const centerOfOscillationString = massesAndSpringsBasicsStrings.centerOfOscillation;
+const centerOfOscillationString = MassesAndSpringsBasicsStrings.centerOfOscillation;
 
 class LabScreenView extends OneSpringScreenView {
   /**

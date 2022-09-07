@@ -29,8 +29,8 @@ type StringsType = {
   'unstretchedLengthStringProperty': TReadOnlyProperty<string>;
 };
 
-const massesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
+const MassesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
 
-massesAndSpringsBasics.register( 'massesAndSpringsBasicsStrings', massesAndSpringsBasicsStrings );
+massesAndSpringsBasics.register( 'MassesAndSpringsBasicsStrings', MassesAndSpringsBasicsStrings );
 
-export default massesAndSpringsBasicsStrings;
+export default MassesAndSpringsBasicsStrings;

@@ -14,10 +14,10 @@ import merge from '../../../phet-core/js/merge.js';
 import { Image } from '../../../scenery/js/imports.js';
 import bounceScreenIcon_png from '../../images/bounceScreenIcon_png.js';
 import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
-import massesAndSpringsBasicsStrings from '../massesAndSpringsBasicsStrings.js';
+import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import BounceScreenView from './view/BounceScreenView.js';
 
-const screenBounceString = massesAndSpringsBasicsStrings.screen.bounce;
+const screenBounceString = MassesAndSpringsBasicsStrings.screen.bounce;
 
 class BounceScreen extends Screen {
 
