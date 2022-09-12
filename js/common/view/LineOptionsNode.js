@@ -52,21 +52,21 @@ class LineOptionsNode extends Node {
     const unstretchedLengthAlignBox = new AlignBox( new Text( unstretchedLengthString, {
       font: MassesAndSpringsConstants.TITLE_FONT,
       maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'unstretchedLengthString' )
+      tandem: tandem.createTandem( 'unstretchedLengthText' )
     } ), { xAlign: 'left', group: alignGroup } );
 
     // Alignbox for movable line Text
     const movableLineAlignBox = new AlignBox( new Text( movableLineString, {
       font: MassesAndSpringsConstants.TITLE_FONT,
       maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'movableLineString' )
+      tandem: tandem.createTandem( 'movableLineText' )
     } ), { xAlign: 'left', group: alignGroup } );
 
     // Alignbox for resting position line  Text
     const restingPositionAlignBox = new AlignBox( new Text( restingPositionString, {
       font: MassesAndSpringsConstants.TITLE_FONT,
       maxWidth: CONTENT_MAX_WIDTH,
-      tandem: tandem.createTandem( 'restingPositionString' )
+      tandem: tandem.createTandem( 'restingPositionText' )
     } ), { xAlign: 'left', group: alignGroup } );
 
     // Max width must be set to the maxWidth of the alignGroup based on its content.
