@@ -17,8 +17,6 @@ import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import BounceScreenView from './view/BounceScreenView.js';
 
-const screenBounceString = MassesAndSpringsBasicsStrings.screen.bounce;
-
 class BounceScreen extends Screen {
 
   /**
@@ -28,7 +26,7 @@ class BounceScreen extends Screen {
   constructor( tandem, options ) {
 
     options = merge( {
-      name: screenBounceString,
+      name: MassesAndSpringsBasicsStrings.screen.bounceStringProperty,
       backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
       homeScreenIcon: new ScreenIcon( new Image( bounceScreenIcon_png ), {
         maxIconWidthProportion: 1,

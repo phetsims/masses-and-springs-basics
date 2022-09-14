@@ -17,8 +17,6 @@ import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import StretchScreenView from './view/StretchScreenView.js';
 
-const screenStretchString = MassesAndSpringsBasicsStrings.screen.stretch;
-
 // image
 class StretchScreen extends Screen {
   /**
@@ -29,7 +27,7 @@ class StretchScreen extends Screen {
   constructor( tandem, options ) {
 
     options = merge( {
-      name: screenStretchString,
+      name: MassesAndSpringsBasicsStrings.screen.stretchStringProperty,
       backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
       homeScreenIcon: new ScreenIcon( new Image( stretchScreenIcon_png ), {
         maxIconWidthProportion: 1,

@@ -17,9 +17,6 @@ import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import LabScreenView from './view/LabScreenView.js';
 
-const screenLabString = MassesAndSpringsBasicsStrings.screen.lab;
-
-// image
 
 class LabScreen extends Screen {
 
@@ -32,7 +29,7 @@ class LabScreen extends Screen {
 
     options = merge( {
       basicsVersion: true,
-      name: screenLabString,
+      name: MassesAndSpringsBasicsStrings.screen.labStringProperty,
       backgroundColorProperty: MassesAndSpringsColors.backgroundProperty,
       homeScreenIcon: new ScreenIcon( new Image( labScreenIcon_png ), {
         maxIconWidthProportion: 1,
