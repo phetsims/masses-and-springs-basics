@@ -5,28 +5,28 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
-import TReadOnlyProperty from '../../axon/js/TReadOnlyProperty.js';
+import LinkableProperty from '../../axon/js/LinkableProperty.js';
 import massesAndSpringsBasics from './massesAndSpringsBasics.js';
 
 type StringsType = {
   'centerOfOscillation': string;
-  'centerOfOscillationStringProperty': TReadOnlyProperty<string>;
+  'centerOfOscillationStringProperty': LinkableProperty<string>;
   'masses-and-springs-basics': {
     'title': string;
-    'titleStringProperty': TReadOnlyProperty<string>;
+    'titleStringProperty': LinkableProperty<string>;
   };
   'screen': {
     'stretch': string;
-    'stretchStringProperty': TReadOnlyProperty<string>;
+    'stretchStringProperty': LinkableProperty<string>;
     'bounce': string;
-    'bounceStringProperty': TReadOnlyProperty<string>;
+    'bounceStringProperty': LinkableProperty<string>;
     'lab': string;
-    'labStringProperty': TReadOnlyProperty<string>;
+    'labStringProperty': LinkableProperty<string>;
   };
   'restingPosition': string;
-  'restingPositionStringProperty': TReadOnlyProperty<string>;
+  'restingPositionStringProperty': LinkableProperty<string>;
   'unstretchedLength': string;
-  'unstretchedLengthStringProperty': TReadOnlyProperty<string>;
+  'unstretchedLengthStringProperty': LinkableProperty<string>;
 };
 
 const MassesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
