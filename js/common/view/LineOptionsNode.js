@@ -74,13 +74,13 @@ class LineOptionsNode extends Node {
 
     // Checkbox group for line options
     const lineOptionsCheckboxGroup = new VerticalCheckboxGroup( [ {
-      createNode: tandem => new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: contentSpacing } ),
+      createNode: () => new HBox( { children: [ unstretchedLengthAlignBox, blueLine ], spacing: contentSpacing } ),
       property: model.naturalLengthVisibleProperty
     }, {
-      createNode: tandem => new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: contentSpacing } ),
+      createNode: () => new HBox( { children: [ restingPositionAlignBox, greenLine ], spacing: contentSpacing } ),
       property: model.equilibriumPositionVisibleProperty
     }, {
-      createNode: tandem => new HBox( { children: [ movableLineAlignBox, redLine ], spacing: contentSpacing } ),
+      createNode: () => new HBox( { children: [ movableLineAlignBox, redLine ], spacing: contentSpacing } ),
       property: model.movableLineVisibleProperty
     } ], {
       checkboxOptions: {
