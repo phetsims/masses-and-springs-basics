@@ -6,6 +6,7 @@
  * @author Denzell Barnett (PhET Interactive Simulations)
  */
 
+import PreferencesModel from '../../joist/js/preferences/PreferencesModel.js';
 import Sim from '../../joist/js/Sim.js';
 import simLauncher from '../../joist/js/simLauncher.js';
 import Tandem from '../../tandem/js/Tandem.js';
@@ -24,7 +25,12 @@ const simOptions = {
     softwareDevelopment: 'Denzell Barnett',
     team: 'Wendy Adams, Ariel Paul, Kathy Perkins in cooperation with the Next-Lab project',
     qualityAssurance: 'Megan Lai, Liam Mulhall, Laura Rea, Jacob Romero, Kathryn Woessner'
-  }
+  },
+  preferencesModel: new PreferencesModel( {
+    localizationOptions: {
+      supportsDynamicLocales: false
+    }
+  } )
 };
 
 simLauncher.launch( () => {
