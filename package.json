@@ -22,7 +22,12 @@
       "phet",
       "adapted-from-phet"
     ],
-    "simulation": true
+    "simulation": true,
+    "screenNameKeys": [
+      "MASSES_AND_SPRINGS_BASICS/screen.stretch",
+      "MASSES_AND_SPRINGS_BASICS/screen.bounce",
+      "MASSES_AND_SPRINGS_BASICS/screen.lab"
+    ]
   },
   "eslintConfig": {
     "extends": "../chipper/eslint/sim_eslintrc.js"
