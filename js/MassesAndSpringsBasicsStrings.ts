@@ -5,28 +5,28 @@
  */
 /* eslint-disable */
 import getStringModule from '../../chipper/js/getStringModule.js';
-import LinkableProperty from '../../axon/js/LinkableProperty.js';
+import type LocalizedStringProperty from '../../chipper/js/LocalizedStringProperty.js';
 import massesAndSpringsBasics from './massesAndSpringsBasics.js';
 
 type StringsType = {
   'centerOfOscillation': string;
-  'centerOfOscillationStringProperty': LinkableProperty<string>;
+  'centerOfOscillationStringProperty': LocalizedStringProperty;
   'masses-and-springs-basics': {
     'title': string;
-    'titleStringProperty': LinkableProperty<string>;
+    'titleStringProperty': LocalizedStringProperty;
   };
   'screen': {
     'stretch': string;
-    'stretchStringProperty': LinkableProperty<string>;
+    'stretchStringProperty': LocalizedStringProperty;
     'bounce': string;
-    'bounceStringProperty': LinkableProperty<string>;
+    'bounceStringProperty': LocalizedStringProperty;
     'lab': string;
-    'labStringProperty': LinkableProperty<string>;
+    'labStringProperty': LocalizedStringProperty;
   };
   'restingPosition': string;
-  'restingPositionStringProperty': LinkableProperty<string>;
+  'restingPositionStringProperty': LocalizedStringProperty;
   'unstretchedLength': string;
-  'unstretchedLengthStringProperty': LinkableProperty<string>;
+  'unstretchedLengthStringProperty': LocalizedStringProperty;
 };
 
 const MassesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
