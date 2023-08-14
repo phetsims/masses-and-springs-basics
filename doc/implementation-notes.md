@@ -5,4 +5,4 @@ This simulation is a subset of the Masses and Springs simulation. It includes mo
 MASB exludes the use of an energy graph and a toolbox on the Stretch and Bounce screens. The Stretch screen also uses a set of springs with a discrete damping value applied. Options for adjusting the spring system have been limited to only gravity values on the lab screen.
 
 For details on the implementation of Masses and Springs,
-see https://github.com/phetsims/masses-and-springs/blob/master/doc/implementation-notes.md.
+see https://github.com/phetsims/masses-and-springs/blob/main/doc/implementation-notes.md.
