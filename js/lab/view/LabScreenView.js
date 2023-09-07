@@ -108,7 +108,7 @@ class LabScreenView extends OneSpringScreenView {
     const centerOfOscillationLineNode = new ReferenceLineNode(
       this.modelViewTransform,
       model.firstSpring,
-      model.firstSpring.massEquilibriumYPositionProperty,
+      model.firstSpring.equilibriumYPositionProperty,
       oscillationVisibilityProperty, {
         stroke: 'black',
         label: new Text( centerOfOscillationString, {
