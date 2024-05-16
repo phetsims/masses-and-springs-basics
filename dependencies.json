@@ -13,7 +13,7 @@
     "branch": "HEAD"
   },
   "chipper": {
-    "sha": "838cc71a2813768433eb00abfeb424dfbf901097",
+    "sha": "1076ba16961f0d9a97435c1ccc254c7ac0f8ceb0",
     "branch": "HEAD"
   },
   "dot": {
@@ -37,7 +37,7 @@
     "branch": "HEAD"
   },
   "masses-and-springs-basics": {
-    "sha": "1bf7dc2630911774069162e628685bbd09b7d41d",
+    "sha": "58f68596a50bb00c6ab6c560253da68d47137928",
     "branch": "1.0"
   },
   "phet-core": {
