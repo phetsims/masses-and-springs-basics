@@ -45,7 +45,7 @@
         ],
         "parserOptions": {
           "project": [
-            "../masses-and-springs-basics/tsconfig.json"
+            "../chipper/tsconfig/eslint-all/tsconfig.json"
           ]
         }
       }
