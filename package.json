@@ -35,8 +35,5 @@
       "MASSES_AND_SPRINGS_BASICS/screen.bounce",
       "MASSES_AND_SPRINGS_BASICS/screen.lab"
     ]
-  },
-  "eslintConfig": {
-    "extends": "../chipper/eslint/sim_eslintrc.js"
   }
 }
