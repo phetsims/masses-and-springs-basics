@@ -34,4 +34,6 @@ type StringsType = {
 
 const MassesAndSpringsBasicsStrings = getStringModule( 'MASSES_AND_SPRINGS_BASICS' ) as StringsType;
 
+massesAndSpringsBasics.register( 'MassesAndSpringsBasicsStrings', MassesAndSpringsBasicsStrings );
+
 export default MassesAndSpringsBasicsStrings;
