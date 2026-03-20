@@ -17,7 +17,6 @@ import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.j
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';
 import PaintColorProperty from '../../../../scenery/js/util/PaintColorProperty.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
-import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 
 class StretchScreenView extends TwoSpringScreenView {
   /**
@@ -131,5 +130,4 @@ class StretchScreenView extends TwoSpringScreenView {
   }
 }
 
-massesAndSpringsBasics.register( 'StretchScreenView', StretchScreenView );
 export default StretchScreenView;

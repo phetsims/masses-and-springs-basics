@@ -18,7 +18,6 @@ import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import AccordionBox from '../../../../sun/js/AccordionBox.js';
 import HSlider from '../../../../sun/js/HSlider.js';
-import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 
 const gravityString = MassesAndSpringsStrings.gravity;
 const lotsString = MassesAndSpringsStrings.lots;
@@ -130,5 +129,4 @@ class GravityAccordionBox extends AccordionBox {
   }
 }
 
-massesAndSpringsBasics.register( 'GravityAccordionBox', GravityAccordionBox );
 export default GravityAccordionBox;

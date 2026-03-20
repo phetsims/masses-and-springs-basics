@@ -13,7 +13,6 @@ import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/M
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import stretchScreenIcon_png from '../../images/stretchScreenIcon_png.js';
-import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import StretchScreenView from './view/StretchScreenView.js';
 
@@ -56,5 +55,4 @@ class StretchScreen extends Screen {
   }
 }
 
-massesAndSpringsBasics.register( 'StretchScreen', StretchScreen );
 export default StretchScreen;

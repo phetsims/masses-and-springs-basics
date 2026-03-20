@@ -16,7 +16,6 @@ import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import Node from '../../../../scenery/js/nodes/Node.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import VerticalCheckboxGroup from '../../../../sun/js/VerticalCheckboxGroup.js';
-import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../../MassesAndSpringsBasicsStrings.js';
 
 const movableLineString = MassesAndSpringsStrings.movableLine;
@@ -107,5 +106,4 @@ class LineOptionsNode extends Node {
   }
 }
 
-massesAndSpringsBasics.register( 'LineOptionsNode', LineOptionsNode );
 export default LineOptionsNode;

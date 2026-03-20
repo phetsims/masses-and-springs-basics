@@ -13,7 +13,6 @@ import LabModel from '../../../masses-and-springs/js/lab/model/LabModel.js';
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import labScreenIcon_png from '../../images/labScreenIcon_png.js';
-import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import LabScreenView from './view/LabScreenView.js';
 
@@ -46,5 +45,4 @@ class LabScreen extends Screen {
   }
 }
 
-massesAndSpringsBasics.register( 'LabScreen', LabScreen );
 export default LabScreen;

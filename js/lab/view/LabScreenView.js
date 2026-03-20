@@ -19,7 +19,6 @@ import VectorVisibilityControlNode from '../../../../masses-and-springs/js/vecto
 import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import Text from '../../../../scenery/js/nodes/Text.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
-import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../../MassesAndSpringsBasicsStrings.js';
 import GravityAccordionBox from './GravityAccordionBox.js';
 
@@ -170,5 +169,4 @@ class LabScreenView extends OneSpringScreenView {
   }
 }
 
-massesAndSpringsBasics.register( 'LabScreenView', LabScreenView );
 export default LabScreenView;

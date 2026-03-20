@@ -13,7 +13,6 @@ import MassesAndSpringsColors from '../../../masses-and-springs/js/common/view/M
 import merge from '../../../phet-core/js/merge.js';
 import Image from '../../../scenery/js/nodes/Image.js';
 import bounceScreenIcon_png from '../../images/bounceScreenIcon_png.js';
-import massesAndSpringsBasics from '../massesAndSpringsBasics.js';
 import MassesAndSpringsBasicsStrings from '../MassesAndSpringsBasicsStrings.js';
 import BounceScreenView from './view/BounceScreenView.js';
 
@@ -53,5 +52,4 @@ class BounceScreen extends Screen {
   }
 }
 
-massesAndSpringsBasics.register( 'BounceScreen', BounceScreen );
 export default BounceScreen;

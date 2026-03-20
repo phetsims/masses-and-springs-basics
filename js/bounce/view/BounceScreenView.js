@@ -15,7 +15,6 @@ import ShelfNode from '../../../../masses-and-springs/js/common/view/ShelfNode.j
 import TwoSpringScreenView from '../../../../masses-and-springs/js/common/view/TwoSpringScreenView.js';
 import VBox from '../../../../scenery/js/layout/nodes/VBox.js';
 import LineOptionsNode from '../../common/view/LineOptionsNode.js';
-import massesAndSpringsBasics from '../../massesAndSpringsBasics.js';
 
 class BounceScreenView extends TwoSpringScreenView {
   /**
@@ -106,5 +105,4 @@ class BounceScreenView extends TwoSpringScreenView {
   }
 }
 
-massesAndSpringsBasics.register( 'BounceScreenView', BounceScreenView );
 export default BounceScreenView;
